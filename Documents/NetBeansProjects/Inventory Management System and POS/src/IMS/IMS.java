@@ -4,6 +4,8 @@
  */
 package IMS;
 
+import java.io.*;
+
 /**
  *
  * @author Ryan
@@ -74,6 +76,11 @@ public class IMS extends javax.swing.JFrame {
 
         backupButton.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         backupButton.setText("BACKUP");
+        backupButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backupButtonActionPerformed(evt);
+            }
+        });
 
         stocksButton.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         stocksButton.setText("STOCK MANAGEMENT");
@@ -140,6 +147,22 @@ public class IMS extends javax.swing.JFrame {
         dispose();
         new AdminLogin().setVisible(true);
     }//GEN-LAST:event_logoutButtonActionPerformed
+private javax.swing.JTable table;
+    private void backupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backupButtonActionPerformed
+        // TODO add your handling code here:
+        try {
+        stockManagement stock = new stockManagement();
+        table = stock.getTable();
+        FileOutputStream fileOutputStream = new FileOutputStream("backup.dat");
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        objectOutputStream.writeObject(table);
+        objectOutputStream.close();
+        fileOutputStream.close();
+        System.out.println("Backup saved successfully.");
+    } catch (IOException ex) {
+        ex.printStackTrace();
+    }
+    }//GEN-LAST:event_backupButtonActionPerformed
 
     /**
      * @param args the command line arguments

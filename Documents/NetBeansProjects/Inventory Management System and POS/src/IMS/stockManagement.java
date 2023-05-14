@@ -5,6 +5,7 @@
 package IMS;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -293,7 +294,7 @@ public class stockManagement extends javax.swing.JFrame {
         String tblDescription = itemList.getValueAt(itemList.getSelectedRow(), 1).toString();
         String tblQuantity = itemList.getValueAt(itemList.getSelectedRow(), 2).toString();
         String tblPrice = itemList.getValueAt(itemList.getSelectedRow(), 3).toString();
-        String tblTotal = itemList.getValueAt(itemList.getSelectedRow(), 4), toString())
+        String tblTotal = itemList.getValueAt(itemList.getSelectedRow(), 4), toString());
         
 
         descripText.setText(tblDescription);
@@ -514,6 +515,13 @@ public class stockManagement extends javax.swing.JFrame {
     }
     private int totalPrice;
     private int total;
+    
+    
+    public javax.swing.JTable getTable(){
+        return itemList;
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton backButton;
@@ -539,4 +547,8 @@ public class stockManagement extends javax.swing.JFrame {
     private javax.swing.JButton stock;
     private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
+
+    JTable getTable() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
