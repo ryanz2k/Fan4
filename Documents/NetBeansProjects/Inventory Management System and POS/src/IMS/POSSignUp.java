@@ -16,6 +16,7 @@ public class POSSignUp extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Left = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         Right = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -40,34 +41,19 @@ public class POSSignUp extends javax.swing.JFrame {
         Left.setBackground(new java.awt.Color(51, 51, 51));
         Left.setMinimumSize(new java.awt.Dimension(400, 500));
         Left.setPreferredSize(new java.awt.Dimension(400, 500));
+        Left.setLayout(null);
+        Left.add(jLabel5);
+        jLabel5.setBounds(580, 113, 0, 190);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/FantasticFourLogo.png"))); // NOI18N
+        Left.add(jLabel9);
+        jLabel9.setBounds(100, 90, 200, 200);
 
         jLabel6.setFont(new java.awt.Font("Gadugi", 3, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("WELCOME TO POS SYSTEM");
-
-        javax.swing.GroupLayout LeftLayout = new javax.swing.GroupLayout(Left);
-        Left.setLayout(LeftLayout);
-        LeftLayout.setHorizontalGroup(
-            LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeftLayout.createSequentialGroup()
-                .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LeftLayout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(jLabel5))
-                    .addGroup(LeftLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(57, 57, 57))
-        );
-        LeftLayout.setVerticalGroup(
-            LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeftLayout.createSequentialGroup()
-                .addContainerGap(117, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(147, 147, 147))
-        );
+        Left.add(jLabel6);
+        jLabel6.setBounds(30, 290, 338, 40);
 
         jPanel1.add(Left);
         Left.setBounds(0, -10, 400, 500);
@@ -101,7 +87,7 @@ public class POSSignUp extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Sign Up");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -233,6 +219,7 @@ public class POSSignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;

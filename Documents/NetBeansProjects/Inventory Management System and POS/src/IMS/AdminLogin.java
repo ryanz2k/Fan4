@@ -37,6 +37,7 @@ public class AdminLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -53,14 +54,14 @@ public class AdminLogin extends javax.swing.JFrame {
 
         backButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         backButton.setForeground(new java.awt.Color(51, 51, 51));
-        backButton.setText("BACK");
+        backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
         jPanel1.add(backButton);
-        backButton.setBounds(700, 420, 80, 30);
+        backButton.setBounds(710, 410, 70, 30);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 500));
@@ -72,11 +73,11 @@ public class AdminLogin extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("WELCOME TO INVENTORY MANAGEMENT");
         jPanel2.add(jLabel8);
-        jLabel8.setBounds(10, 270, 390, 34);
+        jLabel8.setBounds(10, 300, 390, 34);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/FantasticFourLogo.png"))); // NOI18N
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(100, 70, 200, 200);
+        jLabel6.setBounds(100, 90, 200, 200);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 400, 500);
@@ -97,7 +98,8 @@ public class AdminLogin extends javax.swing.JFrame {
         loginButton.setBackground(new java.awt.Color(102, 102, 102));
         loginButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         loginButton.setForeground(new java.awt.Color(255, 255, 255));
-        loginButton.setText("LOGIN");
+        loginButton.setText("Login");
+        loginButton.setPreferredSize(new java.awt.Dimension(72, 24));
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginButtonActionPerformed(evt);
@@ -109,22 +111,36 @@ public class AdminLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(loginButton);
-        loginButton.setBounds(440, 340, 80, 30);
+        loginButton.setBounds(440, 320, 90, 40);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setText("LOGIN");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(550, 30, 120, 80);
 
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Username");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(440, 140, 100, 17);
+        jLabel3.setBounds(440, 140, 100, 18);
 
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Password");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(440, 210, 90, 30);
+
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(-8, -6, 80, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,6 +193,10 @@ public class AdminLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_loginButtonKeyPressed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -214,6 +234,7 @@ public class AdminLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

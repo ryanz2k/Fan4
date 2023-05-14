@@ -17,6 +17,8 @@ public class POSLogin extends javax.swing.JFrame {
         Left = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         Right = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -38,34 +40,23 @@ public class POSLogin extends javax.swing.JFrame {
         Left.setBackground(new java.awt.Color(51, 51, 51));
         Left.setMinimumSize(new java.awt.Dimension(400, 500));
         Left.setPreferredSize(new java.awt.Dimension(400, 500));
+        Left.setLayout(null);
+        Left.add(jLabel5);
+        jLabel5.setBounds(105, 117, 0, 190);
 
         jLabel6.setFont(new java.awt.Font("Gadugi", 3, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("WELCOME TO POS SYSTEM");
+        Left.add(jLabel6);
+        jLabel6.setBounds(30, 290, 338, 40);
 
-        javax.swing.GroupLayout LeftLayout = new javax.swing.GroupLayout(Left);
-        Left.setLayout(LeftLayout);
-        LeftLayout.setHorizontalGroup(
-            LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeftLayout.createSequentialGroup()
-                .addGroup(LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LeftLayout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(jLabel5))
-                    .addGroup(LeftLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(57, 57, 57))
-        );
-        LeftLayout.setVerticalGroup(
-            LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeftLayout.createSequentialGroup()
-                .addContainerGap(117, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(147, 147, 147))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/FantasticFourLogo.png"))); // NOI18N
+        Left.add(jLabel7);
+        jLabel7.setBounds(100, 90, 200, 200);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/FantasticFourLogo.png"))); // NOI18N
+        Left.add(jLabel8);
+        jLabel8.setBounds(100, 90, 200, 200);
 
         jPanel1.add(Left);
         Left.setBounds(0, -10, 400, 500);
@@ -99,7 +90,8 @@ public class POSLogin extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 51));
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +103,7 @@ public class POSLogin extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("I don't have an account?");
 
+        jButton2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jButton2.setText("Sign Up");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,7 +150,7 @@ public class POSLogin extends javax.swing.JFrame {
                 .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(RightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jButton2))
@@ -215,6 +208,8 @@ public class POSLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
