@@ -29,7 +29,7 @@ public class POSOrderList extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("POS Order List");
+        setTitle("Customers Order List");
         setPreferredSize(new java.awt.Dimension(800, 500));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
@@ -38,7 +38,7 @@ public class POSOrderList extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Return");
+        jButton1.setText("Return Order");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -56,7 +56,7 @@ public class POSOrderList extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(102, 102, 102));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Discount");
+        jButton3.setText("Add Discount");
 
         jButton4.setBackground(new java.awt.Color(102, 102, 102));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
@@ -64,11 +64,11 @@ public class POSOrderList extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(102, 102, 102));
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Total");
+        jButton5.setText("Get Total");
 
         jButton6.setBackground(new java.awt.Color(102, 102, 102));
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Order");
+        jButton6.setText("Proccess Order ");
 
         jButton7.setBackground(new java.awt.Color(102, 102, 102));
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,7 +135,7 @@ public class POSOrderList extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Customer Name", "Item Ordered", "Quantity", "Membership ", "Date Ordered", "Total"
+                "Customer Name", "Item Ordered", "Quantity", "Membership ", "Time Ordered", "Total"
             }
         ) {
             Class[] types = new Class [] {
