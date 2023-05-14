@@ -450,105 +450,105 @@ public class CustomerOrder extends javax.swing.JFrame {
         // TODO add your handling code here:
         drinkproduct.setText("Cabernet Sauvignon Wine");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("35");
     }//GEN-LAST:event_CabernetSauvignonWineActionPerformed
 
     private void OldTomGinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OldTomGinActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText(" Old Tom Gin");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("39");
     }//GEN-LAST:event_OldTomGinActionPerformed
 
     private void DistilledSojuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DistilledSojuActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Distilled Soju");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("28");
     }//GEN-LAST:event_DistilledSojuActionPerformed
 
     private void NavyRumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NavyRumActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Navy Rum");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("26");
     }//GEN-LAST:event_NavyRumActionPerformed
 
     private void StoutBeerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StoutBeerActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Stout Beer");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("12");
     }//GEN-LAST:event_StoutBeerActionPerformed
 
     private void SweetCiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SweetCiderActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Sweet Cider");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("12");
     }//GEN-LAST:event_SweetCiderActionPerformed
 
     private void RhumAgricoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RhumAgricoleActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Rhum Agricole");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("40");
     }//GEN-LAST:event_RhumAgricoleActionPerformed
 
     private void ScotchWhiskyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScotchWhiskyActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Scotch Whisky");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("42");
     }//GEN-LAST:event_ScotchWhiskyActionPerformed
 
     private void BitterCiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BitterCiderActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Bitter Cider");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("12");
     }//GEN-LAST:event_BitterCiderActionPerformed
 
     private void SchwarzbierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SchwarzbierActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Schwarzbier");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("21");
     }//GEN-LAST:event_SchwarzbierActionPerformed
 
     private void ChardonnayWineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChardonnayWineActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Chardonnay Wine");
-        drinkquantity.setText("28");
-        drinkprice.setText("");
+        drinkquantity.setText("1");
+        drinkprice.setText("22");
     }//GEN-LAST:event_ChardonnayWineActionPerformed
 
     private void BourbonWhiskyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BourbonWhiskyActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Bourbon Whisky");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("27");
     }//GEN-LAST:event_BourbonWhiskyActionPerformed
 
     private void PlymouthGinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlymouthGinActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Plymouth Gin");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("34");
     }//GEN-LAST:event_PlymouthGinActionPerformed
 
     private void FruitVodkaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FruitVodkaActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Fruit Vodka");
         drinkquantity.setText("1");
-        drinkprice.setText("");
+        drinkprice.setText("25");
     }//GEN-LAST:event_FruitVodkaActionPerformed
 
     private void PlainVodkaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlainVodkaActionPerformed
         // TODO add your handling code here:
         drinkproduct.setText("Plain Vodka");
         drinkquantity.setText("1");
-        drinkprice.setText("10");
+        drinkprice.setText("20");
     }//GEN-LAST:event_PlainVodkaActionPerformed
 
     private void addtocartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addtocartActionPerformed

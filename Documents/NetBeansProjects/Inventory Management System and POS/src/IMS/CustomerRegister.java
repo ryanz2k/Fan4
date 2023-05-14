@@ -187,7 +187,7 @@ public class CustomerRegister extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Check if you have filled all","Error",JOptionPane.ERROR_MESSAGE);
         }
         else{
-            JOptionPane.showMessageDialog(this,"Your Details has been stored!","Registered",JOptionPane.OK_OPTION);
+            JOptionPane.showMessageDialog(this,"Your Details has been stored!");
         }
     }//GEN-LAST:event_registerconfirmActionPerformed
 
