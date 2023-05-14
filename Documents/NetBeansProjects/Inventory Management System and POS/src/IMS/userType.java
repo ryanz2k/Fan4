@@ -39,6 +39,7 @@ public class userType extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Inventory Management and POS System");
         setPreferredSize(new java.awt.Dimension(800, 500));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));

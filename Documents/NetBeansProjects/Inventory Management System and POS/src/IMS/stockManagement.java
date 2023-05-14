@@ -78,6 +78,7 @@ public class stockManagement extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Stock Management");
+        setPreferredSize(new java.awt.Dimension(800, 500));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
@@ -185,7 +186,7 @@ public class stockManagement extends javax.swing.JFrame {
                         .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,11 +252,11 @@ public class stockManagement extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("STOCK MANAGEMENT");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(260, 10, 269, 32);
+        jLabel1.setBounds(260, 10, 269, 30);
 
         jButton1.setText("jButton1");
         jPanel1.add(jButton1);
-        jButton1.setBounds(380, 140, 75, 23);
+        jButton1.setBounds(380, 140, 78, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
