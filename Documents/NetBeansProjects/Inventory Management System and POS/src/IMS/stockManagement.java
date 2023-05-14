@@ -321,6 +321,8 @@ public class stockManagement extends javax.swing.JFrame {
             quantityText.setText("");
             priceText.setText("");
             JOptionPane.showMessageDialog(this, "Product successfuly added");
+            
+            //PROCESS GETS UPLOADED TO REPORT/LOG
         }
     }//GEN-LAST:event_addButtonActionPerformed
     private void calculation(){
@@ -548,7 +550,5 @@ public class stockManagement extends javax.swing.JFrame {
     private javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 
-    JTable getTable() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
 }
