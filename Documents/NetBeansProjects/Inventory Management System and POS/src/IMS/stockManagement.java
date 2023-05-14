@@ -220,11 +220,11 @@ public class stockManagement extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Product", "Description", "Quantity", "Price ( $ )"
+                "Product", "Description", "Quantity", "Price ( $ )", "Total Price ($)"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -292,6 +292,7 @@ public class stockManagement extends javax.swing.JFrame {
         String tblDescription = itemList.getValueAt(itemList.getSelectedRow(), 1).toString();
         String tblQuantity = itemList.getValueAt(itemList.getSelectedRow(), 2).toString();
         String tblPrice = itemList.getValueAt(itemList.getSelectedRow(), 3).toString();
+        String tblTotal = itemList.getValueAt(itemList.getSelectedRow(), 4), toString())
         
 
         descripText.setText(tblDescription);
@@ -305,30 +306,39 @@ public class stockManagement extends javax.swing.JFrame {
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         // Validate if empty
-        
+        int maxQuantity = 300;
         if (descripText.getText().equals("")||quantityText.getText().equals("")||priceText.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Please Fill in The Blanks","Error",JOptionPane.ERROR_MESSAGE);
         }
+        /*else if (productList.getSelectedItem() == itemList.getValueAt(0, 0).toString()){
+          
+        }*/
         else{
-            model.insertRow(model.getRowCount(),new Object[] {productList.getSelectedItem().toString(),descripText.getText(),quantityText.getText(),priceText.getText()});
+            model.insertRow(model.getRowCount(),new Object[] {productList.getSelectedItem().toString(),descripText.getText(),quantityText.getText(),priceText.getText(),total});
             descripText.setText("");
             quantityText.setText("");
             priceText.setText("");
             JOptionPane.showMessageDialog(this, "Product successfuly added");
         }
     }//GEN-LAST:event_addButtonActionPerformed
-
+    private void calculation(){
+        int quantity = Integer.parseInt(quantityText.getText());
+        int price = Integer.parseInt(priceText.getText());
+        totalPrice = quantity * price;
+    }
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
         // TODO add your handling code here:
         if (itemList.getSelectedRowCount()==1){
             String description = descripText.getText();
             String quantity = quantityText.getText();
             String price = priceText.getText();
-
+            calculation();
+            total = totalPrice;
 
             itemList.setValueAt(description, itemList.getSelectedRow(), 1);
             itemList.setValueAt(quantity, itemList.getSelectedRow(), 2);
             itemList.setValueAt(price, itemList.getSelectedRow(), 3);
+            itemList.setValueAt(total, itemList.getSelectedRow(), 4);
             JOptionPane.showMessageDialog(this, "Product successfuly updated");
             descripText.setText("");
             quantityText.setText("");
@@ -374,64 +384,80 @@ public class stockManagement extends javax.swing.JFrame {
         String selectedItem = productList.getSelectedItem().toString();
         switch (selectedItem){
             case "Chardonnay Wine":
+                quantityText.setText("1");
                 descripText.setText("Popular dry white wine");
-                priceText.setText("$25");
+                priceText.setText("25");
+                
                 break;
             case "Cabernet Sauvignon Wine":
+                quantityText.setText("1");
                 descripText.setText("Bold, full-bodied red wine");
-                priceText.setText("$15");
+                priceText.setText("15");
                 break;
             case "Stout Beer":
+                quantityText.setText("1");
                 descripText.setText("Dark, roasted, malty beer");
-                priceText.setText("$8");
+                priceText.setText("8");
                 break;
             case "Schwarzbier":
+                quantityText.setText("1");
                 descripText.setText("German-style black lager");
-                priceText.setText("$10");
+                priceText.setText("10");
                 break;
             case "Scotch Whisky":
+                quantityText.setText("1");
                 descripText.setText("Smoky, peaty Scottish whisky");
-                priceText.setText("$30");
+                priceText.setText("30");
                 break;
             case "Bourbon Whisky":
+                quantityText.setText("1");
                 descripText.setText("American oak-aged whisky");
-                priceText.setText("$20");
+                priceText.setText("20");
                 break;
             case "Plymouth Gin":
+                quantityText.setText("1");
                 descripText.setText("Classic, citrusy British gin");
-                priceText.setText("$20");
+                priceText.setText("20");
                 break;
             case "Old Tom Gin":
+                quantityText.setText("1");
                 descripText.setText("Slightly sweetened gin variety");
-                priceText.setText("$25");
+                priceText.setText("25");
                 break;
             case "Sweet Cider":
+                quantityText.setText("1");
                 descripText.setText("Apple juice with alcohol");
-                priceText.setText("$8");
+                priceText.setText("8");
                 break;
             case "Bitter Cider":
+                quantityText.setText("1");
                 descripText.setText("Dry, tart apple cider");
-                priceText.setText("$8");
+                priceText.setText("8");
                 break;
             case "Fruit Vodka":
+                quantityText.setText("1");
                 descripText.setText("Vodka with fruit flavoring");
-                priceText.setText("$15");
+                priceText.setText("15");
                 break;
             case "Plain Vodka":
+                quantityText.setText("1");
                 descripText.setText("Neutral, clear spirit");
-                priceText.setText("$10");
+                priceText.setText("10");
                 break;
             case "Distilled Soju":
+                quantityText.setText("1");
                 descripText.setText("Clear Korean liquor");
-                priceText.setText("$15");
+                priceText.setText("15");
                 break;
             case "Navy Rum":
+                quantityText.setText("1");
                 descripText.setText("High-proof, spiced rum");
-                priceText.setText("$15");
+                priceText.setText("15");
                 break;
             case "Rhum Agricole":
+                quantityText.setText("1");
                 descripText.setText("French Caribbean rum variety");
-                priceText.setText("$30");
+                priceText.setText("30");
                 break;      
         }
     }//GEN-LAST:event_productListActionPerformed
@@ -485,6 +511,8 @@ public class stockManagement extends javax.swing.JFrame {
             }
         });
     }
+    private int totalPrice;
+    private int total;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton backButton;
