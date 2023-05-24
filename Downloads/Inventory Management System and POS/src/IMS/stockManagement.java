@@ -477,6 +477,7 @@ public class stockManagement extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Every Product Quantity can't exceed 120 Bottles.");
             }
         }
+        canImport = true;
     }                                         
 
     private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
@@ -561,6 +562,7 @@ public class stockManagement extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Please select a row to update");
             }
         }
+        canImport = true;
     }                                            
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
@@ -609,6 +611,7 @@ public class stockManagement extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Please select a row to delete");
             }
         }
+        canImport = true;
     }                                            
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {                                           
