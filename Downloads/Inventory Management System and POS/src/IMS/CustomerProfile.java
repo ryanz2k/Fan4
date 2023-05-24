@@ -4,14 +4,12 @@
  */
 package IMS;
 
-import javax.swing.JOptionPane;
 /**
  *
  * @author Raidi
  * NOTE: EDIT THIS SHIT
  */
 public class CustomerProfile extends javax.swing.JFrame {
-
     /**
      * Creates new form CustomerProfile
      */
@@ -29,6 +27,14 @@ public class CustomerProfile extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
+        logout = new javax.swing.JButton();
+        orderproduct = new javax.swing.JButton();
+        usernamepresent = new javax.swing.JLabel();
+        checkorders = new javax.swing.JButton();
+        profileusername = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        profilemoney = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,25 +44,126 @@ public class CustomerProfile extends javax.swing.JFrame {
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
+        logout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        logout.setText("Log Out");
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
+
+        orderproduct.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        orderproduct.setText("Order Now!");
+        orderproduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                orderproductActionPerformed(evt);
+            }
+        });
+
+        usernamepresent.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        usernamepresent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        usernamepresent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LiquorPics/userprofilepicture.jpg"))); // NOI18N
+        usernamepresent.setToolTipText("");
+        usernamepresent.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        usernamepresent.setMinimumSize(new java.awt.Dimension(268, 225));
+        usernamepresent.setPreferredSize(new java.awt.Dimension(250, 250));
+        usernamepresent.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        checkorders.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        checkorders.setText("Check Orders");
+        checkorders.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkordersActionPerformed(evt);
+            }
+        });
+
+        profileusername.setEditable(false);
+        profileusername.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        profileusername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setText("Account Money:");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setText("$");
+
+        profilemoney.setEditable(false);
+        profilemoney.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        profilemoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(788, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(logout)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(usernamepresent, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(orderproduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(checkorders)))
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(profilemoney))
+                        .addComponent(profileusername, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(531, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(orderproduct)
+                        .addGap(18, 18, 18)
+                        .addComponent(checkorders))
+                    .addComponent(usernamepresent, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(profileusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(profilemoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(182, 182, 182)
                 .addComponent(jLabel2)
-                .addContainerGap(488, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
+                .addComponent(logout)
+                .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // Sends the user to the Log-in page
+        dispose();
+        CustomerLogin profiletologin = new CustomerLogin();
+        profiletologin.setVisible(true);
+    }//GEN-LAST:event_logoutActionPerformed
+
+    private void orderproductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderproductActionPerformed
+        // Sends the user to the Order page
+        dispose();
+        CustomerOrder profiletoorder = new CustomerOrder();
+        profiletoorder.setVisible(true);
+    }//GEN-LAST:event_orderproductActionPerformed
+
+    private void checkordersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkordersActionPerformed
+        // Sends the user to the Invoice page
+        dispose();
+        CustomerOrderList profiletoinvoice = new CustomerOrderList();
+        profiletoinvoice.setVisible(true);
+    }//GEN-LAST:event_checkordersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,6 +204,14 @@ public class CustomerProfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton checkorders;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton logout;
+    private javax.swing.JButton orderproduct;
+    private javax.swing.JTextField profilemoney;
+    private javax.swing.JTextField profileusername;
+    private javax.swing.JLabel usernamepresent;
     // End of variables declaration//GEN-END:variables
 }

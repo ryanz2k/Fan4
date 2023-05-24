@@ -7,11 +7,8 @@ package IMS;
 import javax.swing.JOptionPane;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.io.File;
 
 /**
@@ -99,7 +96,7 @@ public class CustomerLogin extends javax.swing.JFrame {
                                 .addComponent(confirmtologin))
                             .addComponent(usernamelogin)
                             .addComponent(passwordlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(499, Short.MAX_VALUE))
+                .addContainerGap(519, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,7 +115,7 @@ public class CustomerLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gotoregister)
                     .addComponent(confirmtologin))
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addContainerGap(508, Short.MAX_VALUE))
         );
 
         pack();
@@ -135,7 +132,7 @@ public class CustomerLogin extends javax.swing.JFrame {
         // Sends user to his/her profile
         String usernamelog = usernamelogin.getText();
         String passwordlog = new String(passwordlogin.getPassword());
-        String filepath = "C:\\Users\\Raidi\\Documents\\ComProgIMSProject\\trunk\\Documents\\NetBeansProjects\\Inventory Management System and POS\\src\\IMS";
+        String filepath = "C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Documents\\NetBeansProjects\\Inventory Management System and POS\\src\\IMS";
         File path = new File(filepath);
         
         if(!path.exists() || !path.isDirectory()){
@@ -163,8 +160,7 @@ public class CustomerLogin extends javax.swing.JFrame {
                             }
                         }
                         
-                        if(usernamefile != null && passwordfile != null && 
-                           usernamefile.equals(usernamelog) && passwordfile.equals(passwordlog)){
+                        if(usernamefile != null && passwordfile != null && usernamefile.equals(usernamelog) && passwordfile.equals(passwordlog)){
                             accounthere = true;
                             break;
                         }

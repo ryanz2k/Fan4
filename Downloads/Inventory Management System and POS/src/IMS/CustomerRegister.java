@@ -55,6 +55,8 @@ public class CustomerRegister extends javax.swing.JFrame {
         confirmregister = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         customerfullname = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        customeraddress = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -137,6 +139,13 @@ public class CustomerRegister extends javax.swing.JFrame {
         customerfullname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         customerfullname.setPreferredSize(new java.awt.Dimension(60, 25));
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel10.setText("Address:");
+
+        customeraddress.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customeraddress.setPreferredSize(new java.awt.Dimension(60, 25));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -179,21 +188,29 @@ public class CustomerRegister extends javax.swing.JFrame {
                                         .addComponent(confirmregister))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(125, 125, 125)
-                                .addComponent(jLabel9)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel9))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(customerfullname, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(412, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(customerfullname, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(customeraddress, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(432, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(customerfullname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(customeraddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(customerusernamereg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -227,7 +244,7 @@ public class CustomerRegister extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gotologin)
                     .addComponent(confirmregister))
-                .addGap(66, 66, 66))
+                .addContainerGap(253, Short.MAX_VALUE))
         );
 
         pack();
@@ -237,6 +254,7 @@ public class CustomerRegister extends javax.swing.JFrame {
         // Creates a text file for the user
         // Note: Check the text file for the line location of the username, password, and email incase for logging function
         String fullnamereg = customerfullname.getText();
+        String addressreg = customeraddress.getText();
         String usernamereg = customerusernamereg.getText();
         String passwordreg = customerpasswordreg.getText();
         String emailreg = customeremailreg.getText();
@@ -247,19 +265,25 @@ public class CustomerRegister extends javax.swing.JFrame {
         String creditpinreg = customerccp.getText();
         String creditmoneyreg = customerca.getText();
         
-        if(fullnamereg.isEmpty() || usernamereg.isEmpty() || passwordreg.isEmpty() || emailreg.isEmpty() || bddayreg.isEmpty() || bdmonthreg.isEmpty() || bddayyearreg.isEmpty() || creditnumreg.isEmpty() || creditpinreg.isEmpty() || creditmoneyreg.isEmpty()){
+        if(fullnamereg.isEmpty() || usernamereg.isEmpty() || 
+                passwordreg.isEmpty() || emailreg.isEmpty() || 
+                bddayreg.isEmpty() || bdmonthreg.isEmpty() || 
+                bddayyearreg.isEmpty() || creditnumreg.isEmpty() || 
+                creditpinreg.isEmpty() || creditmoneyreg.isEmpty() || 
+                addressreg.isEmpty()){
             JOptionPane.showMessageDialog(this,"Fill all Detials","Error",JOptionPane.ERROR_MESSAGE);
         }
         else{
             try {
-                BufferedWriter customerdetials = new BufferedWriter(new FileWriter("C:\\Users\\Raidi\\Documents\\ComProgIMSProject\\trunk\\Documents\\NetBeansProjects\\Inventory Management System and POS\\src\\IMS\\"+fullnamereg+".txt"));
-                customerdetials.write(fullnamereg);
+                BufferedWriter customerdetials = new BufferedWriter(new FileWriter("C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Documents\\NetBeansProjects\\Inventory Management System and POS\\src\\IMS\\"+fullnamereg+".txt"));
+                customerdetials.write("\nFullname: "+fullnamereg);
+                customerdetials.write("\nAddress: "+addressreg);
                 customerdetials.write("\nUsername: "+usernamereg);
                 customerdetials.write("\nPassword: "+passwordreg);
                 customerdetials.write("\nEmail: "+emailreg);
-                customerdetials.write("\n"+bddayreg);
-                customerdetials.write("\n"+bdmonthreg);
-                customerdetials.write("\n"+bddayyearreg);
+                customerdetials.write("\n(day/month/year)Birthday: "+bddayreg);
+                customerdetials.write("/"+bdmonthreg);
+                customerdetials.write("/"+bddayyearreg);
                 customerdetials.write("\nCredit Card No#: "+creditnumreg);
                 customerdetials.write("\nCredit Card Pin: "+creditpinreg);
                 customerdetials.write("\nCredit on Account: "+creditmoneyreg);
@@ -268,13 +292,15 @@ public class CustomerRegister extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            JOptionPane.showMessageDialog(this, "Successfully made the account!");
         }
-        JOptionPane.showMessageDialog(this, "Successfully made the account!");
     }//GEN-LAST:event_confirmregisterActionPerformed
 
     private void gotologinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotologinActionPerformed
         // To go the Login Page
         dispose();
+        CustomerLogin registertologin = new CustomerLogin();
+        registertologin.setVisible(true);
     }//GEN-LAST:event_gotologinActionPerformed
 
     /**
@@ -314,6 +340,7 @@ public class CustomerRegister extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton confirmregister;
+    private javax.swing.JTextField customeraddress;
     private javax.swing.JTextField customerbdday;
     private javax.swing.JTextField customerbdmonth;
     private javax.swing.JTextField customerbdyear;
@@ -326,6 +353,7 @@ public class CustomerRegister extends javax.swing.JFrame {
     private javax.swing.JTextField customerusernamereg;
     private javax.swing.JButton gotologin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
