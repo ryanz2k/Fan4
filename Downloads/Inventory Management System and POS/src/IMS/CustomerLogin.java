@@ -132,7 +132,7 @@ public class CustomerLogin extends javax.swing.JFrame {
         // Sends user to his/her profile
         String usernamelog = usernamelogin.getText();
         String passwordlog = new String(passwordlogin.getPassword());
-        String filepath = "C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Documents\\NetBeansProjects\\Inventory Management System and POS\\src\\IMS";
+        String filepath = "C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Downloads\\Inventory Management System and POS\\src\\IMS\\";
         File path = new File(filepath);
         
         if(!path.exists() || !path.isDirectory()){
@@ -176,6 +176,9 @@ public class CustomerLogin extends javax.swing.JFrame {
         
         if (accounthere) {
             JOptionPane.showMessageDialog(null, "Successfully Login");
+            dispose();
+            CustomerProfile logintoprofile = new CustomerProfile();
+            logintoprofile.setVisible(true);
            
         } else {
             JOptionPane.showMessageDialog(null, "Account does not Exist");

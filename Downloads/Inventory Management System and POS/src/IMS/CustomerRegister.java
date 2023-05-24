@@ -275,7 +275,7 @@ public class CustomerRegister extends javax.swing.JFrame {
         }
         else{
             try {
-                BufferedWriter customerdetials = new BufferedWriter(new FileWriter("C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Documents\\NetBeansProjects\\Inventory Management System and POS\\src\\IMS\\"+fullnamereg+".txt"));
+                BufferedWriter customerdetials = new BufferedWriter(new FileWriter("C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Downloads\\Inventory Management System and POS\\src\\IMS\\"+fullnamereg+".txt"));
                 customerdetials.write("\nFullname: "+fullnamereg);
                 customerdetials.write("\nAddress: "+addressreg);
                 customerdetials.write("\nUsername: "+usernamereg);
