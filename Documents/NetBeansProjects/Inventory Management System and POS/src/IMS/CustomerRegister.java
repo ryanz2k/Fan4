@@ -6,9 +6,15 @@ package IMS;
 
 import javax.swing.JOptionPane;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  *
  * @author Raidi
+ * 
+ * NOTE: THIS IS THE NEW CUSTOMERREGISTER GUI
  */
 public class CustomerRegister extends javax.swing.JFrame {
 
@@ -33,164 +39,245 @@ public class CustomerRegister extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        customerUR = new javax.swing.JTextField();
-        customerPR = new javax.swing.JTextField();
-        customerER = new javax.swing.JTextField();
-        customerBDDR = new javax.swing.JTextField();
-        customerBDMR = new javax.swing.JTextField();
-        customerBDYR = new javax.swing.JTextField();
-        confirmlogin = new javax.swing.JButton();
-        registerconfirm = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        customerusernamereg = new javax.swing.JTextField();
+        customerpasswordreg = new javax.swing.JTextField();
+        customeremailreg = new javax.swing.JTextField();
+        customerbdday = new javax.swing.JTextField();
+        customerccn = new javax.swing.JTextField();
+        customerccp = new javax.swing.JTextField();
+        customerca = new javax.swing.JTextField();
+        customerbdmonth = new javax.swing.JTextField();
+        customerbdyear = new javax.swing.JTextField();
+        gotologin = new javax.swing.JButton();
+        confirmregister = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        customerfullname = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 500));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Register Form");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Username:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("Password:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Email:");
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setText("Email Adress:");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Birthday:");
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel5.setText("Credit Card Pin:");
 
-        customerUR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel6.setText("Credit Amount:");
 
-        customerPR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel7.setText("(day/month/year)Birthday:");
 
-        customerER.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel8.setText("Credit Card No#:");
 
-        customerBDDR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customerusernamereg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customerusernamereg.setPreferredSize(new java.awt.Dimension(60, 25));
 
-        customerBDMR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customerpasswordreg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customerpasswordreg.setPreferredSize(new java.awt.Dimension(60, 25));
 
-        customerBDYR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customeremailreg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customeremailreg.setPreferredSize(new java.awt.Dimension(60, 25));
 
-        confirmlogin.setText("Login");
-        confirmlogin.addActionListener(new java.awt.event.ActionListener() {
+        customerbdday.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customerbdday.setPreferredSize(new java.awt.Dimension(60, 25));
+
+        customerccn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customerccn.setPreferredSize(new java.awt.Dimension(60, 25));
+
+        customerccp.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customerccp.setPreferredSize(new java.awt.Dimension(60, 25));
+
+        customerca.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customerca.setPreferredSize(new java.awt.Dimension(60, 25));
+
+        customerbdmonth.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customerbdmonth.setPreferredSize(new java.awt.Dimension(60, 25));
+
+        customerbdyear.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customerbdyear.setPreferredSize(new java.awt.Dimension(60, 25));
+
+        gotologin.setText("Login");
+        gotologin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmloginActionPerformed(evt);
+                gotologinActionPerformed(evt);
             }
         });
 
-        registerconfirm.setText("Confirm");
-        registerconfirm.addActionListener(new java.awt.event.ActionListener() {
+        confirmregister.setText("Confirm");
+        confirmregister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registerconfirmActionPerformed(evt);
+                confirmregisterActionPerformed(evt);
             }
         });
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel9.setText("Full Name:");
+
+        customerfullname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customerfullname.setPreferredSize(new java.awt.Dimension(60, 25));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(207, 207, 207)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(customerUR, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(42, 42, 42)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(confirmlogin)
-                        .addGap(18, 18, 18)
-                        .addComponent(registerconfirm))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(customerBDDR, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(customerER, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel6))
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(customerPR, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(customerBDMR, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(customerBDYR, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(54, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(customerusernamereg, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(customerpasswordreg, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(customeremailreg, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(customerccn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(customerccp, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(customerca, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(customerbdday, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(customerbdmonth, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(customerbdyear, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(gotologin)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(confirmregister))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(125, 125, 125)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(customerfullname, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(412, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addGap(42, 42, 42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(customerfullname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(customerUR, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(customerusernamereg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(customerPR, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(customerpasswordreg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(customerER, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(customeremailreg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(customerbdday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(customerbdmonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(customerbdyear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(customerccn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(customerBDDR, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(customerBDMR, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(customerBDYR, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                    .addComponent(customerccp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(confirmlogin)
-                    .addComponent(registerconfirm))
-                .addContainerGap(182, Short.MAX_VALUE))
+                    .addComponent(jLabel6)
+                    .addComponent(customerca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(gotologin)
+                    .addComponent(confirmregister))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void confirmloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmloginActionPerformed
-        // Sends the Customer back to the Login page
-        dispose();
-        CustomerLogin sendback = new CustomerLogin();
-        sendback.setVisible(true);
-    }//GEN-LAST:event_confirmloginActionPerformed
-
-    private void registerconfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerconfirmActionPerformed
-        // Confirms the Customer's Registration
+    private void confirmregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmregisterActionPerformed
+        // Creates a text file for the user
+        // Note: Check the text file for the line location of the username, password, and email incase for logging function
+        String fullnamereg = customerfullname.getText();
+        String usernamereg = customerusernamereg.getText();
+        String passwordreg = customerpasswordreg.getText();
+        String emailreg = customeremailreg.getText();
+        String bddayreg = customerbdday.getText();
+        String bdmonthreg = customerbdmonth.getText();
+        String bddayyearreg = customerbdyear.getText();
+        String creditnumreg = customerccn.getText();
+        String creditpinreg = customerccp.getText();
+        String creditmoneyreg = customerca.getText();
         
-        // Customer's Detials
-        String usernamereg = customerUR.getText();
-        String passwordreg = customerPR.getText();
-        String emailreg = customerER.getText();
-        String customerBDD = customerBDDR.getText();
-        String customerBDM = customerBDMR.getText();
-        String customerBDY = customerBDYR.getText();
-        
-        // The set conditions
-        if(usernamereg.isEmpty() || passwordreg.isEmpty() || emailreg.isEmpty() || customerBDD.isEmpty() || customerBDM.isEmpty() || customerBDY.isEmpty()){
-            // Ensure the details are filled
-            JOptionPane.showMessageDialog(this,"Check if you have filled all","Error",JOptionPane.ERROR_MESSAGE);
+        if(fullnamereg.isEmpty() || usernamereg.isEmpty() || passwordreg.isEmpty() || emailreg.isEmpty() || bddayreg.isEmpty() || bdmonthreg.isEmpty() || bddayyearreg.isEmpty() || creditnumreg.isEmpty() || creditpinreg.isEmpty() || creditmoneyreg.isEmpty()){
+            JOptionPane.showMessageDialog(this,"Fill all Detials","Error",JOptionPane.ERROR_MESSAGE);
         }
         else{
-            JOptionPane.showMessageDialog(this,"Your Details has been stored!");
+            try {
+                BufferedWriter customerdetials = new BufferedWriter(new FileWriter("C:\\Users\\Raidi\\Documents\\ComProgIMSProject\\trunk\\Documents\\NetBeansProjects\\Inventory Management System and POS\\src\\IMS\\"+fullnamereg+".txt"));
+                customerdetials.write("\nFullname: "+fullnamereg);
+                customerdetials.write("\nUsername: "+usernamereg);
+                customerdetials.write("\nPassword: "+passwordreg);
+                customerdetials.write("\nEmail: "+emailreg);
+                customerdetials.write("\n(day/month/year)Birthday: "+bddayreg);
+                customerdetials.write("/"+bdmonthreg);
+                customerdetials.write("/"+bddayyearreg);
+                customerdetials.write("\nCredit Card No#: "+creditnumreg);
+                customerdetials.write("\nCredit Card Pin: "+creditpinreg);
+                customerdetials.write("\nCredit on Account: "+creditmoneyreg);
+                
+                customerdetials.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            JOptionPane.showMessageDialog(this, "Successfully made the account!");
         }
-    }//GEN-LAST:event_registerconfirmActionPerformed
+    }//GEN-LAST:event_confirmregisterActionPerformed
+
+    private void gotologinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotologinActionPerformed
+        // To go the Login Page
+        dispose();
+        CustomerLogin registertologin = new CustomerLogin();
+        registertologin.setVisible(true);
+    }//GEN-LAST:event_gotologinActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,18 +315,26 @@ public class CustomerRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton confirmlogin;
-    private javax.swing.JTextField customerBDDR;
-    private javax.swing.JTextField customerBDMR;
-    private javax.swing.JTextField customerBDYR;
-    private javax.swing.JTextField customerER;
-    private javax.swing.JTextField customerPR;
-    private javax.swing.JTextField customerUR;
+    private javax.swing.JButton confirmregister;
+    private javax.swing.JTextField customerbdday;
+    private javax.swing.JTextField customerbdmonth;
+    private javax.swing.JTextField customerbdyear;
+    private javax.swing.JTextField customerca;
+    private javax.swing.JTextField customerccn;
+    private javax.swing.JTextField customerccp;
+    private javax.swing.JTextField customeremailreg;
+    private javax.swing.JTextField customerfullname;
+    private javax.swing.JTextField customerpasswordreg;
+    private javax.swing.JTextField customerusernamereg;
+    private javax.swing.JButton gotologin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JButton registerconfirm;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

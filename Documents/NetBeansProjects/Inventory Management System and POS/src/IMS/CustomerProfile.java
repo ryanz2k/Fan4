@@ -4,10 +4,10 @@
  */
 package IMS;
 
-import javax.swing.JOptionPane;
 /**
  *
  * @author Raidi
+ * NOTE: EDIT THIS SHIT
  */
 public class CustomerProfile extends javax.swing.JFrame {
 
@@ -28,9 +28,13 @@ public class CustomerProfile extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
+        logout = new javax.swing.JButton();
+        orderproduct = new javax.swing.JButton();
+        usernamepresent = new javax.swing.JLabel();
+        checkorders = new javax.swing.JButton();
+        usernameprofile = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        customerlogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,23 +44,48 @@ public class CustomerProfile extends javax.swing.JFrame {
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("username");
-
-        jButton1.setText("Order");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        logout.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        logout.setText("Log Out");
+        logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                logoutActionPerformed(evt);
             }
         });
 
-        customerlogout.setText("Logout");
-        customerlogout.addActionListener(new java.awt.event.ActionListener() {
+        orderproduct.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        orderproduct.setText("Order Now!");
+        orderproduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customerlogoutActionPerformed(evt);
+                orderproductActionPerformed(evt);
             }
         });
+
+        usernamepresent.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        usernamepresent.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        usernamepresent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LiquorPics/userprofilepicture.jpg"))); // NOI18N
+        usernamepresent.setToolTipText("");
+        usernamepresent.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        usernamepresent.setMinimumSize(new java.awt.Dimension(268, 225));
+        usernamepresent.setPreferredSize(new java.awt.Dimension(250, 250));
+        usernamepresent.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        checkorders.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        checkorders.setText("Check Orders");
+        checkorders.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkordersActionPerformed(evt);
+            }
+        });
+
+        usernameprofile.setEditable(false);
+        usernameprofile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        usernameprofile.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setText("Account Money:");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setText("$");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -65,47 +94,66 @@ public class CustomerProfile extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(logout)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(29, 29, 29)
-                        .addComponent(jButton1))
-                    .addComponent(jLabel3)
-                    .addComponent(customerlogout))
-                .addContainerGap(477, Short.MAX_VALUE))
+                        .addComponent(usernamepresent, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(92, 92, 92)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(orderproduct, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(checkorders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(usernameprofile, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3))
+                .addContainerGap(484, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jButton1)))
+                        .addComponent(orderproduct)
+                        .addGap(18, 18, 18)
+                        .addComponent(checkorders))
+                    .addComponent(usernamepresent, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addComponent(usernameprofile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(customerlogout)
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addComponent(jLabel3)
+                .addGap(178, 178, 178)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addComponent(logout)
+                .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void customerlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerlogoutActionPerformed
-        // Customer Logs out from the System
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // Sends the user to the Log-in page
         dispose();
-        CustomerLogin customerout = new CustomerLogin();
-        customerout.setVisible(true);
-    }//GEN-LAST:event_customerlogoutActionPerformed
+        CustomerLogin profiletologin = new CustomerLogin();
+        profiletologin.setVisible(true);
+    }//GEN-LAST:event_logoutActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // Sends the Customer to the Order page
+    private void orderproductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderproductActionPerformed
+        // Sends the user to the Order page
         dispose();
-        CustomerOrder orderdrinks = new CustomerOrder();
-        orderdrinks.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        CustomerOrder profiletoorder = new CustomerOrder();
+        profiletoorder.setVisible(true);
+    }//GEN-LAST:event_orderproductActionPerformed
+
+    private void checkordersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkordersActionPerformed
+        // Sends the user to the Invoice page
+        dispose();
+        CustomerInvoice profiletoinvoice = new CustomerInvoice();
+        profiletoinvoice.setVisible(true);
+    }//GEN-LAST:event_checkordersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,9 +194,13 @@ public class CustomerProfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton customerlogout;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton checkorders;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton logout;
+    private javax.swing.JButton orderproduct;
+    private javax.swing.JLabel usernamepresent;
+    private javax.swing.JTextField usernameprofile;
     // End of variables declaration//GEN-END:variables
 }
