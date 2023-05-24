@@ -57,11 +57,11 @@ public class POSLogin extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/FantasticFourLogo.png"))); // NOI18N
         Left.add(jLabel7);
-        jLabel7.setBounds(100, 90, 200, 200);
+        jLabel7.setBounds(100, 90, 0, 0);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/FantasticFourLogo.png"))); // NOI18N
         Left.add(jLabel8);
-        jLabel8.setBounds(100, 90, 200, 200);
+        jLabel8.setBounds(100, 90, 0, 0);
 
         jPanel1.add(Left);
         Left.setBounds(0, -10, 400, 500);
@@ -75,7 +75,7 @@ public class POSLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("LOGIN");
         Right.add(jLabel1);
-        jLabel1.setBounds(128, 33, 110, 48);
+        jLabel1.setBounds(128, 33, 118, 43);
 
         jLabel2.setBackground(new java.awt.Color(51, 51, 51));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -100,7 +100,7 @@ public class POSLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Password");
         Right.add(jLabel3);
-        jLabel3.setBounds(18, 192, 129, 20);
+        jLabel3.setBounds(18, 192, 129, 17);
 
         passwordLogin.setForeground(new java.awt.Color(102, 102, 102));
         passwordLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +126,7 @@ public class POSLogin extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("I don't have an account?");
         Right.add(jLabel4);
-        jLabel4.setBounds(10, 400, 129, 30);
+        jLabel4.setBounds(10, 400, 144, 30);
 
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jButton2.setText("Sign Up");
@@ -175,86 +175,86 @@ public class POSLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordLoginActionPerformed
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
-       
-        String loginUsername = usernameLogin.getText();
-        String loginPassword = new String(passwordLogin.getPassword());
-        String DIRECTORY_PATH = "NetbeansProject/Inventory Management and POS/ F4 Data";
-        File directory = new File(DIRECTORY_PATH);
 
-        if (!directory.exists() || !directory.isDirectory()) {
-            JOptionPane.showMessageDialog(null, "Error: Account directory doesn't exist");
+    String loginUsername = usernameLogin.getText();
+    String loginPassword = new String(passwordLogin.getPassword());
+    String DIRECTORY_PATH = "NetbeansProject/Inventory Management and POS/ F4 Data";
+    File directory = new File(DIRECTORY_PATH);
+
+    if (!directory.exists() || !directory.isDirectory()) {
+        JOptionPane.showMessageDialog(null, "Error: Account directory doesn't exist");
+        return;
+    }
+
+    boolean accountExists = false;
+    File accountFile = null;
+
+    File[] files = directory.listFiles();
+    if (files != null) {
+        for (File file : files) {
+            if (file.isFile()) {
+                try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                    String storedUsername = null;
+                    String storedPassword = null;
+                    String line;
+
+                    while ((line = reader.readLine()) != null) {
+                        if (line.startsWith("Username:")) {
+                            storedUsername = line.substring(line.indexOf(":") + 1).trim();
+                        } else if (line.startsWith("Password:")) {
+                            storedPassword = line.substring(line.indexOf(":") + 1).trim();
+                        }
+                    }
+
+                    // Compare the stored credentials with the entered credentials
+                    if (storedUsername != null && storedPassword != null &&
+                            storedUsername.equals(loginUsername) && storedPassword.equals(loginPassword)) {
+                        accountExists = true;
+                        accountFile = file;
+                        break;
+                    }
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(null, "An error occurred: " + e.getMessage());
+                    return;
+                }
+            }
+        }
+    }
+
+    POSOrderList POSOrderlistFrame = new POSOrderList();
+    
+    if (accountExists) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(accountFile))) {
+            String storedFullName = null;
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                if (line.startsWith("Full Name:")) {
+                    storedFullName = line.substring(line.indexOf(":") + 1).trim();
+                    break;
+                }
+            }
+
+            if (storedFullName != null) {
+                POSOrderlistFrame.setFullName(storedFullName); // Set the full name in the POSOrderList frame
+            } else {
+                JOptionPane.showMessageDialog(null, "Error: Full name not found in account file");
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "An error occurred: " + e.getMessage());
             return;
         }
 
-        boolean accountExists = false;
-        File accountFile = null;
+        // Open the POSOrderList frame
+        POSOrderlistFrame.setVisible(true);
+        POSOrderlistFrame.pack();
+        POSOrderlistFrame.setLocationRelativeTo(null);
+        this.dispose();
 
-        File[] files = directory.listFiles();
-        if (files != null) {
-            for (File file : files) {
-                if (file.isFile()) {
-                    try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-                        String storedUsername = null;
-                        String storedPassword = null;
-                        String line;
+    } else {
+        JOptionPane.showMessageDialog(null, "Error: Account doesn't exist");
+    }
 
-                        while ((line = reader.readLine()) != null) {
-                            if (line.startsWith("Username:")) {
-                                storedUsername = line.substring(line.indexOf(":") + 1).trim();
-                            } else if (line.startsWith("Password:")) {
-                                storedPassword = line.substring(line.indexOf(":") + 1).trim();
-                            }
-                        }
-
-                        // Compare the stored credentials with the entered credentials
-                        if (storedUsername != null && storedPassword != null &&
-                            storedUsername.equals(loginUsername) && storedPassword.equals(loginPassword)) {
-                            accountExists = true;
-                            accountFile = file;
-                            break;
-                        }
-                    } catch (IOException e) {
-                        JOptionPane.showMessageDialog(null, "An error occurred: " + e.getMessage());
-                        return;
-                    }
-                }
-            }
-        }
-
-        POSOrderList POSOrderlistFrame = new POSOrderList();
-        
-        if (accountExists) {
-            try (BufferedReader reader = new BufferedReader(new FileReader(accountFile))) {
-                String storedFullName = null;
-                String line;
-
-                while ((line = reader.readLine()) != null) {
-                    if (line.startsWith("Full Name:")) {
-                        storedFullName = line.substring(line.indexOf(":") + 1).trim();
-                        break;
-                    }
-                }
-
-                if (storedFullName != null) {
-                    POSOrderlistFrame.setFullName(storedFullName); // Set the full name in the POSOrderList frame
-                } else {
-                    JOptionPane.showMessageDialog(null, "Error: Full name not found in account file");
-                }
-            } catch (IOException e) {
-                JOptionPane.showMessageDialog(null, "An error occurred: " + e.getMessage());
-                return;
-            }
-
-            // Open the POSOrderList frame
-            POSOrderlistFrame.setVisible(true);
-            POSOrderlistFrame.pack();
-            POSOrderlistFrame.setLocationRelativeTo(null);
-            this.dispose();
-            
-        } else {
-            JOptionPane.showMessageDialog(null, "Error: Account doesn't exist");
-        }
-            
         
     }//GEN-LAST:event_LoginButtonActionPerformed
 
