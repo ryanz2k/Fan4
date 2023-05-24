@@ -4,6 +4,8 @@
  */
 package IMS;
 
+import java.io.*;
+
 /**
  *
  * @author Raidi
@@ -17,7 +19,24 @@ public class CustomerProfile extends javax.swing.JFrame {
         initComponents();
     }
     
+    private String username;
+    private String balance;
     
+    public String getusername(){
+        return this.username;
+    }
+    public void setusername(String username){
+        this.username = username;
+        profileusername.setText(username);
+    }
+    
+    public String getbalance(){
+        return this.balance;
+    }
+    public void setbalance(String balance){
+        this.balance = balance;
+        profilemoney.setText(balance);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -84,7 +103,7 @@ public class CustomerProfile extends javax.swing.JFrame {
         profileusername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setText("Account Money:");
+        jLabel1.setText("Balance:");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setText("$");
@@ -131,11 +150,11 @@ public class CustomerProfile extends javax.swing.JFrame {
                 .addComponent(profileusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(profilemoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(182, 182, 182)
+                .addGap(188, 188, 188)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
                 .addComponent(logout)

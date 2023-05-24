@@ -178,6 +178,7 @@ public class CustomerLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Successfully Login");
             dispose();
             CustomerProfile logintoprofile = new CustomerProfile();
+            logintoprofile.setusername(usernamelog);
             logintoprofile.setVisible(true);
            
         } else {
