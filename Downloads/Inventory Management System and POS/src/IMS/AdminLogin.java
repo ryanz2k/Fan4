@@ -124,7 +124,7 @@ public class AdminLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Username");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(440, 140, 100, 19);
+        jLabel3.setBounds(440, 140, 100, 18);
 
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));

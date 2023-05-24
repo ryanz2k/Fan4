@@ -57,11 +57,11 @@ public class POSLogin extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/FantasticFourLogo.png"))); // NOI18N
         Left.add(jLabel7);
-        jLabel7.setBounds(100, 90, 0, 0);
+        jLabel7.setBounds(100, 90, 200, 200);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/FantasticFourLogo.png"))); // NOI18N
         Left.add(jLabel8);
-        jLabel8.setBounds(100, 90, 0, 0);
+        jLabel8.setBounds(100, 90, 200, 200);
 
         jPanel1.add(Left);
         Left.setBounds(0, -10, 400, 500);

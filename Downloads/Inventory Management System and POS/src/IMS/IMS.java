@@ -27,84 +27,79 @@ public class IMS extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        IMSTitle = new javax.swing.JLabel();
         logoutButton = new javax.swing.JButton();
         reportLogButton = new javax.swing.JButton();
         stocksButton = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Inventory Management System");
+        setPreferredSize(new java.awt.Dimension(800, 500));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 500));
+        jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(51, 255, 0));
-
-        IMSTitle.setFont(new java.awt.Font("Segoe UI", 1, 32)); // NOI18N
-        IMSTitle.setText("INVENTORY MANAGEMENT SYSTEM");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(IMSTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(65, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addComponent(IMSTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
-        );
-
-        logoutButton.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        logoutButton.setText("LOGOUT");
+        logoutButton.setBackground(new java.awt.Color(102, 102, 102));
+        logoutButton.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        logoutButton.setForeground(new java.awt.Color(255, 255, 255));
+        logoutButton.setText("Log out");
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(logoutButton);
+        logoutButton.setBounds(490, 350, 220, 60);
 
-        reportLogButton.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        reportLogButton.setText("REPORT/LOG");
+        reportLogButton.setBackground(new java.awt.Color(102, 102, 102));
+        reportLogButton.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        reportLogButton.setForeground(new java.awt.Color(255, 255, 255));
+        reportLogButton.setText("Report Logs");
+        reportLogButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reportLogButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(reportLogButton);
+        reportLogButton.setBounds(490, 140, 220, 60);
 
-        stocksButton.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        stocksButton.setText("STOCK MANAGEMENT");
+        stocksButton.setBackground(new java.awt.Color(102, 102, 102));
+        stocksButton.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        stocksButton.setForeground(new java.awt.Color(255, 255, 255));
+        stocksButton.setText("Stock Management");
         stocksButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 stocksButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(stocksButton);
+        stocksButton.setBounds(490, 250, 220, 60);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(stocksButton, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(reportLogButton, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(stocksButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(reportLogButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
-                .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
-        );
+        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel3.setPreferredSize(new java.awt.Dimension(400, 500));
+        jPanel3.setLayout(null);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/FantasticFourLogo.png"))); // NOI18N
+        jPanel3.add(jLabel6);
+        jLabel6.setBounds(100, 90, 200, 200);
+
+        jLabel8.setFont(new java.awt.Font("Gadugi", 3, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("WELCOME TO INVENTORY MANAGEMENT");
+        jPanel3.add(jLabel8);
+        jLabel8.setBounds(10, 300, 390, 34);
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(0, 0, 400, 500);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setText("ADMINISTRATOR");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(450, 30, 330, 80);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,7 +109,9 @@ public class IMS extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -132,6 +129,10 @@ public class IMS extends javax.swing.JFrame {
         dispose();
         new AdminLogin().setVisible(true);
     }//GEN-LAST:event_logoutButtonActionPerformed
+
+    private void reportLogButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportLogButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reportLogButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,9 +170,11 @@ public class IMS extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel IMSTitle;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton reportLogButton;
     private javax.swing.JButton stocksButton;

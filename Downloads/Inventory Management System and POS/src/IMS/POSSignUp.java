@@ -51,7 +51,7 @@ public class POSSignUp extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/FantasticFourLogo.png"))); // NOI18N
         Left.add(jLabel9);
-        jLabel9.setBounds(100, 90, 0, 0);
+        jLabel9.setBounds(100, 90, 200, 200);
 
         jLabel6.setFont(new java.awt.Font("Gadugi", 3, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));

@@ -1,13 +1,46 @@
 package IMS;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+import javax.swing.Timer;
+
 public class POSOrderList extends javax.swing.JFrame {
-  
+
+    private Timer timer;
+    private final TimeZone philippineTimeZone;
+
     public POSOrderList() {
         initComponents();
+        philippineTimeZone = TimeZone.getTimeZone("Asia/Manila");
+        loadDateTime();
+        startTimer();
     }
- 
-     public void setFullName(String fullName) {
+
+    public void setFullName(String fullName) {
         fullNameLabel.setText(fullName);
+    }
+
+    public final void loadDateTime() {
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("MMMM dd, yyyy");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("hh:mm:ss a");
+        sdf.setTimeZone(philippineTimeZone);
+        sdf2.setTimeZone(philippineTimeZone);
+        timeLabel.setText(sdf2.format(date));
+        dateLabel.setText(sdf.format(date));
+    }
+
+    private void startTimer() {
+        timer = new Timer(1000, (evt) -> updateTimeLabel());
+        timer.start();
+    }
+
+    private void updateTimeLabel() {
+        Date time = new Date();
+        SimpleDateFormat sdf2 = new SimpleDateFormat("hh:mm:ss a");
+        sdf2.setTimeZone(philippineTimeZone);
+        timeLabel.setText(sdf2.format(time));
     }
 
      
@@ -27,15 +60,17 @@ public class POSOrderList extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         fullNameLabel = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        timeLabel = new javax.swing.JLabel();
+        dateLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
 
         jTextField1.setText("jTextField1");
 
@@ -141,82 +176,42 @@ public class POSOrderList extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(630, 20, 160, 250);
+        jPanel2.setBounds(620, 20, 160, 250);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        jPanel5.setLayout(null);
 
-            },
-            new String [] {
-                "Customer Name", "Item Ordered", "Quantity", "Membership ", "Time Ordered", "Total"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 20, 610, 250);
-
-        fullNameLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
+        fullNameLabel.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
         fullNameLabel.setText("jLabel2");
+        jPanel5.add(fullNameLabel);
+        fullNameLabel.setBounds(137, 14, 49, 18);
 
-        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
         jLabel4.setText("Employee Name:");
+        jPanel5.add(jLabel4);
+        jLabel4.setBounds(18, 14, 113, 18);
 
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 12)); // NOI18N
-        jLabel5.setText("Current Time:");
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
+        jLabel5.setText("Time:");
+        jPanel5.add(jLabel5);
+        jLabel5.setBounds(315, 14, 38, 18);
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 3, 18)); // NOI18N
-        jLabel1.setText("WELCOME TO POS SYSTEM!");
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
+        jLabel6.setText(" Date: ");
+        jPanel5.add(jLabel6);
+        jLabel6.setBounds(444, 14, 43, 18);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(fullNameLabel))
-                    .addComponent(jLabel5))
-                .addGap(154, 154, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(fullNameLabel)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addContainerGap(12, Short.MAX_VALUE))
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        timeLabel.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
+        timeLabel.setText("jLabel1");
+        jPanel5.add(timeLabel);
+        timeLabel.setBounds(359, 15, 60, 18);
+
+        dateLabel.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
+        dateLabel.setText("jLabel3");
+        jPanel5.add(dateLabel);
+        dateLabel.setBounds(493, 14, 49, 18);
 
         jPanel1.add(jPanel5);
-        jPanel5.setBounds(210, 290, 580, 60);
+        jPanel5.setBounds(210, 400, 570, 50);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LiquorPics/FantasticFourLogo.png"))); // NOI18N
         jPanel1.add(jLabel2);
@@ -226,7 +221,7 @@ public class POSOrderList extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 580, Short.MAX_VALUE)
+            .addGap(0, 570, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,7 +229,28 @@ public class POSOrderList extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(210, 360, 580, 100);
+        jPanel3.setBounds(210, 290, 570, 100);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Customer Name", "Membership", "Time Ordered", "Total Price", "Order Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(30, 20, 580, 250);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -277,6 +293,7 @@ public class POSOrderList extends javax.swing.JFrame {
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel fullNameLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -285,17 +302,18 @@ public class POSOrderList extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel timeLabel;
     // End of variables declaration//GEN-END:variables
 
     
