@@ -45,7 +45,6 @@ public class CustomerRegister extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         customerusernamereg = new javax.swing.JTextField();
-        customerpasswordreg = new javax.swing.JTextField();
         customeremailreg = new javax.swing.JTextField();
         customerbdday = new javax.swing.JTextField();
         customerccn = new javax.swing.JTextField();
@@ -62,6 +61,7 @@ public class CustomerRegister extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         Yes = new javax.swing.JRadioButton();
         No = new javax.swing.JRadioButton();
+        customerpasswordreg = new javax.swing.JPasswordField();
 
         jLabel12.setText("jLabel12");
 
@@ -100,9 +100,6 @@ public class CustomerRegister extends javax.swing.JFrame {
 
         customerusernamereg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         customerusernamereg.setPreferredSize(new java.awt.Dimension(60, 25));
-
-        customerpasswordreg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        customerpasswordreg.setPreferredSize(new java.awt.Dimension(60, 25));
 
         customeremailreg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         customeremailreg.setPreferredSize(new java.awt.Dimension(60, 25));
@@ -168,6 +165,13 @@ public class CustomerRegister extends javax.swing.JFrame {
         yesorno.add(No);
         No.setText("No");
 
+        customerpasswordreg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customerpasswordreg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                customerpasswordregActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -191,12 +195,11 @@ public class CustomerRegister extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(customerpasswordreg, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(customeremailreg, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(customerccn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(customerccp, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(customerca, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(customeremailreg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(customerccn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(customerccp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(customerca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(customerbdday, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -207,7 +210,8 @@ public class CustomerRegister extends javax.swing.JFrame {
                                         .addComponent(gotologin)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(confirmregister))
-                                    .addComponent(customerusernamereg, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(customerusernamereg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(customerpasswordreg)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(125, 125, 125)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -237,19 +241,22 @@ public class CustomerRegister extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(Yes))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(customeraddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(No))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(No)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel10)
+                        .addComponent(customeraddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(customerusernamereg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3)
-                    .addComponent(customerpasswordreg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(customerpasswordreg, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(customeremailreg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -275,7 +282,7 @@ public class CustomerRegister extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(gotologin)
                     .addComponent(confirmregister))
-                .addContainerGap(271, Short.MAX_VALUE))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
 
         pack();
@@ -287,7 +294,7 @@ public class CustomerRegister extends javax.swing.JFrame {
         String fullnamereg = customerfullname.getText();
         String addressreg = customeraddress.getText();
         String usernamereg = customerusernamereg.getText();
-        String passwordreg = customerpasswordreg.getText();
+        String passwordreg = new String(customerpasswordreg.getPassword());
         String emailreg = customeremailreg.getText();
         String bddayreg = customerbdday.getText();
         String bdmonthreg = customerbdmonth.getText();
@@ -347,6 +354,10 @@ public class CustomerRegister extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_YesActionPerformed
 
+    private void customerpasswordregActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerpasswordregActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_customerpasswordregActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -395,7 +406,7 @@ public class CustomerRegister extends javax.swing.JFrame {
     private javax.swing.JTextField customerccp;
     private javax.swing.JTextField customeremailreg;
     private javax.swing.JTextField customerfullname;
-    private javax.swing.JTextField customerpasswordreg;
+    private javax.swing.JPasswordField customerpasswordreg;
     private javax.swing.JTextField customerusernamereg;
     private javax.swing.JButton gotologin;
     private javax.swing.JLabel jLabel1;

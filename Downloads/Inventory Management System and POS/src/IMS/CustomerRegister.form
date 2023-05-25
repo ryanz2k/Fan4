@@ -54,12 +54,11 @@
                                   <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="customerpasswordreg" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="customeremailreg" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="customerccn" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="customerccp" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="customerca" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="customeremailreg" max="32767" attributes="0"/>
+                                  <Component id="customerccn" max="32767" attributes="0"/>
+                                  <Component id="customerccp" max="32767" attributes="0"/>
+                                  <Component id="customerca" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="customerbdday" min="-2" pref="46" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -72,7 +71,8 @@
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="confirmregister" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="customerusernamereg" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="customerusernamereg" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="customerpasswordreg" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -115,10 +115,12 @@
                   <Component id="Yes" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="customeraddress" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="No" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="customeraddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -126,11 +128,14 @@
                   <Component id="customerusernamereg" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="customerpasswordreg" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                      <Component id="customerpasswordreg" pref="25" max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="customeremailreg" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -162,7 +167,7 @@
                   <Component id="gotologin" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="confirmregister" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="271" max="32767" attributes="0"/>
+              <EmptySpace pref="274" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -240,14 +245,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="customerusernamereg">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[60, 25]"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="customerpasswordreg">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -388,6 +385,14 @@
         </Property>
         <Property name="text" type="java.lang.String" value="No"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="customerpasswordreg">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="customerpasswordregActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
