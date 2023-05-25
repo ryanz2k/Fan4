@@ -41,6 +41,7 @@ public class CustomerLogin extends javax.swing.JFrame {
         confirmtologin = new javax.swing.JButton();
         passwordlogin = new javax.swing.JPasswordField();
         jPanel1 = new javax.swing.JPanel();
+        confirmtologin1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 500));
@@ -66,7 +67,7 @@ public class CustomerLogin extends javax.swing.JFrame {
             }
         });
 
-        confirmtologin.setText("Confirm");
+        confirmtologin.setText("Login");
         confirmtologin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirmtologinActionPerformed(evt);
@@ -85,6 +86,13 @@ public class CustomerLogin extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
+
+        confirmtologin1.setText("Back");
+        confirmtologin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmtologin1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,6 +119,10 @@ public class CustomerLogin extends javax.swing.JFrame {
                             .addComponent(passwordlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(usernamelogin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(409, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(confirmtologin1)
+                .addGap(130, 130, 130))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +144,9 @@ public class CustomerLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confirmtologin)
                     .addComponent(gotoregister))
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                .addComponent(confirmtologin1)
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -149,7 +163,7 @@ public class CustomerLogin extends javax.swing.JFrame {
         // Sends user to his/her profile
         String usernamelog = usernamelogin.getText();
         String passwordlog = new String(passwordlogin.getPassword());
-        String filepath = "NetbeansProject\\Inventory Management and POS\\ F4 Data\\Customer Data";
+        String filepath = "";
         File path = new File(filepath);
         
         if(!path.exists() || !path.isDirectory()){
@@ -203,6 +217,12 @@ public class CustomerLogin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_confirmtologinActionPerformed
 
+    private void confirmtologin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmtologin1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new userType().setVisible(true);
+    }//GEN-LAST:event_confirmtologin1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -240,6 +260,7 @@ public class CustomerLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton confirmtologin;
+    private javax.swing.JButton confirmtologin1;
     private javax.swing.JButton gotoregister;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

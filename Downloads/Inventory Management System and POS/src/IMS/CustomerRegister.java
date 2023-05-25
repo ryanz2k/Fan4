@@ -110,14 +110,14 @@ public class CustomerRegister extends javax.swing.JFrame {
         customerbdyear.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         customerbdyear.setPreferredSize(new java.awt.Dimension(60, 25));
 
-        gotologin.setText("Login");
+        gotologin.setText("Back");
         gotologin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gotologinActionPerformed(evt);
             }
         });
 
-        confirmregister.setText("Confirm");
+        confirmregister.setText("Register");
         confirmregister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirmregisterActionPerformed(evt);

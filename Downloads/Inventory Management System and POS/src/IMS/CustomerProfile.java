@@ -108,6 +108,11 @@ public class CustomerProfile extends javax.swing.JFrame {
         profileusername.setEditable(false);
         profileusername.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         profileusername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        profileusername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileusernameActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Balance:");
@@ -118,6 +123,11 @@ public class CustomerProfile extends javax.swing.JFrame {
         profilemoney.setEditable(false);
         profilemoney.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         profilemoney.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        profilemoney.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profilemoneyActionPerformed(evt);
+            }
+        });
 
         editprofile.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         editprofile.setText("Edit Profile");
@@ -283,6 +293,23 @@ public class CustomerProfile extends javax.swing.JFrame {
         profiletoinvoice.setVisible(true);
     }//GEN-LAST:event_checkordersActionPerformed
 
+
+    private void profileusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileusernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_profileusernameActionPerformed
+
+    private void profilemoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profilemoneyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_profilemoneyActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+
+    /**
+     * @param args the command line arguments
+     */
+
     private void editprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editprofileActionPerformed
         // Lets the user edit his/her profile detail
         String getfile = getfullname.getText();
@@ -325,6 +352,7 @@ public class CustomerProfile extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Successfully Edited your Profile!");
         }
     }//GEN-LAST:event_editprofileActionPerformed
+
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
