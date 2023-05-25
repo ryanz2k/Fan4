@@ -17,6 +17,10 @@ import javax.swing.JOptionPane;
 
 public class POSOrderList extends javax.swing.JFrame {
 
+    static char[] getlogFilename() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     private Timer timer;
     private final TimeZone philippineTimeZone;
     private String fullName;
@@ -57,6 +61,14 @@ public class POSOrderList extends javax.swing.JFrame {
         timeLabel.setText(sdf2.format(time));
     }
     
+    public String getLogoutTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+            .withLocale(Locale.ENGLISH)
+            .withZone(ZoneId.of("Asia/Manila"));
+        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Manila"));
+        String logoutTime = now.format(formatter);
+        return logoutTime;
+    } 
    
 
     
@@ -392,20 +404,7 @@ public class POSOrderList extends javax.swing.JFrame {
 
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         
-       
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
-            .withLocale(Locale.ENGLISH)
-            .withZone(ZoneId.of("Asia/Manila"));
-        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Manila"));
-        String logoutTime = now.format(formatter);
-
-        String logFileName = "NetbeansProject/Inventory Management and POS/ F4 Data/Employee Accounts/" + fullName + ".txt";
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(logFileName, true))) {
-            writer.newLine();
-            writer.write("Logout Time: " + logoutTime);
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "An error occurred while saving the logout time: " + e.getMessage());
-        }
+        String logoutTime = getLogoutTime(); // Call the method to get the logout time
 
         POSLogin POSLoginFrame = new POSLogin();
         POSLoginFrame.setVisible(true);

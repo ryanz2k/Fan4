@@ -228,6 +228,8 @@ public class POSLogin extends javax.swing.JFrame {
     }
 
      POSOrderList POSOrderlistFrame = new POSOrderList();
+     String logoutTime = POSOrderlistFrame.getLogoutTime();
+     
 
             if (accountExists) {
                 try (BufferedReader reader = new BufferedReader(new FileReader(accountFile))) {
@@ -256,6 +258,9 @@ public class POSLogin extends javax.swing.JFrame {
                         String logFileName = DIRECTORY_PATH_EmployeeLogs + "/" + storedFullName + ".txt";
                         try (BufferedWriter writer = new BufferedWriter(new FileWriter(logFileName))) {
                             writer.write("Login Time: " + loginTime);
+                            writer.newLine();
+                            writer.write("Logout Time: " + logoutTime);
+                          
                         } catch (IOException e) {
                             JOptionPane.showMessageDialog(null, "An error occurred while saving the login time: " + e.getMessage());
                             return;
