@@ -162,7 +162,9 @@ public class adminLog extends javax.swing.JFrame {
         Object[] rowData = {"hi","hello"};
         model2.addRow(rowData);
     }//GEN-LAST:event_addrowActionPerformed
-
+    public void addLog(Object[] dataRow){
+        model2.addRow(dataRow);
+    }
     /**
      * @param args the command line arguments
      */

@@ -148,6 +148,7 @@ public class AdminLogin extends javax.swing.JFrame {
         jPanel1.setBounds(0, 0, 800, 500);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void userTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userTextActionPerformed
@@ -164,8 +165,7 @@ public class AdminLogin extends javax.swing.JFrame {
         }
         else if (username.equals("Admin") && password.equals("1234")){
             dispose();
-            IMS ims = new IMS();
-            ims.setVisible(true);
+            new stockManagement().setVisible(true);
         }
         else{
             JOptionPane.showMessageDialog(this, "Incorrect Username or Password","Error",JOptionPane.ERROR_MESSAGE);
