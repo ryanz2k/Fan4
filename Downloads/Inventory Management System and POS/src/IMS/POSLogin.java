@@ -1,9 +1,15 @@
 package IMS;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 
@@ -178,7 +184,7 @@ public class POSLogin extends javax.swing.JFrame {
 
     String loginUsername = usernameLogin.getText();
     String loginPassword = new String(passwordLogin.getPassword());
-    String DIRECTORY_PATH = "NetbeansProject/Inventory Management and POS/ F4 Data";
+    String DIRECTORY_PATH = "NetbeansProject/Inventory Management and POS/ F4 Data/Employee Accounts";
     File directory = new File(DIRECTORY_PATH);
 
     if (!directory.exists() || !directory.isDirectory()) {
@@ -221,39 +227,61 @@ public class POSLogin extends javax.swing.JFrame {
         }
     }
 
-    POSOrderList POSOrderlistFrame = new POSOrderList();
-    
-    if (accountExists) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(accountFile))) {
-            String storedFullName = null;
-            String line;
+     POSOrderList POSOrderlistFrame = new POSOrderList();
 
-            while ((line = reader.readLine()) != null) {
-                if (line.startsWith("Full Name:")) {
-                    storedFullName = line.substring(line.indexOf(":") + 1).trim();
-                    break;
+            if (accountExists) {
+                try (BufferedReader reader = new BufferedReader(new FileReader(accountFile))) {
+                    String storedFullName = null;
+                    String line;
+
+                    while ((line = reader.readLine()) != null) {
+                        if (line.startsWith("Full Name:")) {
+                            storedFullName = line.substring(line.indexOf(":") + 1).trim();
+                            break;
+                        }
+                    }
+
+                    if (storedFullName != null) {
+                        POSOrderlistFrame.setFullName(storedFullName); // Set the full name in the POSOrderList frame
+
+                        // Obtain the current login time
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+                            .withLocale(Locale.ENGLISH)
+                            .withZone(ZoneId.of("Asia/Manila"));
+                        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Manila"));
+                        String loginTime = now.format(formatter);
+
+                        String DIRECTORY_PATH_EmployeeLogs = "NetbeansProject/Inventory Management and POS/ F4 Data/Employee Report Logs";
+                        // Create the log file with the employee's full name as the file name and write the login time inside
+                        String logFileName = DIRECTORY_PATH_EmployeeLogs + "/" + storedFullName + ".txt";
+                        try (BufferedWriter writer = new BufferedWriter(new FileWriter(logFileName))) {
+                            writer.write("Login Time: " + loginTime);
+                        } catch (IOException e) {
+                            JOptionPane.showMessageDialog(null, "An error occurred while saving the login time: " + e.getMessage());
+                            return;
+                        }
+
+                        JOptionPane.showMessageDialog(null, "Successfully Login");
+
+                        // Open the POSOrderList frame
+                        POSOrderlistFrame.setVisible(true);
+                        POSOrderlistFrame.pack();
+                        POSOrderlistFrame.setLocationRelativeTo(null);
+                        this.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Error: Full name not found in account file");
+                    }
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(null, "An error occurred: " + e.getMessage());
+                    return;
                 }
-            }
-
-            if (storedFullName != null) {
-                POSOrderlistFrame.setFullName(storedFullName); // Set the full name in the POSOrderList frame
+                
+                
+                
+                
             } else {
-                JOptionPane.showMessageDialog(null, "Error: Full name not found in account file");
+                JOptionPane.showMessageDialog(null, "Error: Account doesn't exist");
             }
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "An error occurred: " + e.getMessage());
-            return;
-        }
-
-        // Open the POSOrderList frame
-        POSOrderlistFrame.setVisible(true);
-        POSOrderlistFrame.pack();
-        POSOrderlistFrame.setLocationRelativeTo(null);
-        this.dispose();
-
-    } else {
-        JOptionPane.showMessageDialog(null, "Error: Account doesn't exist");
-    }
 
         
     }//GEN-LAST:event_LoginButtonActionPerformed

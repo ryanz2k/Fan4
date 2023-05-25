@@ -204,7 +204,7 @@ public class POSSignUp extends javax.swing.JFrame {
         String fullnameEmployee = employeeFullname.getText();
         String usernameEmployee = employeeUsername.getText();
         String passwordEmployee = new String(employeePassword.getPassword());
-        String DIRECTORY_PATH = "NetbeansProject/Inventory Management and POS/ F4 Data"; 
+        String DIRECTORY_PATH = "NetbeansProject/Inventory Management and POS/ F4 Data/Employee Accounts"; 
         
          if (fullnameEmployee.isEmpty() || usernameEmployee.isEmpty() || passwordEmployee.isEmpty()) {
             JOptionPane.showMessageDialog(null,"Error: Please fill in all fields");
