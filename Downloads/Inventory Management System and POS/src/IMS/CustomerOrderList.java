@@ -5,6 +5,7 @@
 package IMS;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -44,6 +45,7 @@ public class CustomerOrderList extends javax.swing.JFrame {
         invoice = new javax.swing.JTextArea();
         createthereciept = new javax.swing.JButton();
         makethereciept = new javax.swing.JButton();
+        deleteorderfile = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -63,7 +65,7 @@ public class CustomerOrderList extends javax.swing.JFrame {
         jScrollPane1.setViewportView(orderlist);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("Enter the Address:");
+        jLabel2.setText("Enter the Order Number:");
 
         enteredaddress.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -100,6 +102,13 @@ public class CustomerOrderList extends javax.swing.JFrame {
             }
         });
 
+        deleteorderfile.setText("Cancel Order");
+        deleteorderfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteorderfileActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,9 +117,12 @@ public class CustomerOrderList extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(createthereciept)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(deleteorderfile)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(createthereciept))
                             .addComponent(makethereciept))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE))
@@ -142,7 +154,9 @@ public class CustomerOrderList extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(createthereciept)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(createthereciept)
+                            .addComponent(deleteorderfile))
                         .addGap(18, 18, 18)
                         .addComponent(makethereciept))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -158,7 +172,7 @@ public class CustomerOrderList extends javax.swing.JFrame {
         // Presents the data within the file
         String address = enteredaddress.getText();
         
-        String thefilepath = "C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Downloads\\Inventory Management System and POS\\src\\IMS\\"+address+".txt";
+        String thefilepath = "NetbeansProject\\Inventory Management and POS\\ F4 Data\\Customer Data\\"+address+".txt";
         File getfile = new File(thefilepath);
             
         try {
@@ -188,7 +202,7 @@ public class CustomerOrderList extends javax.swing.JFrame {
         // Creates the invoice
         String address = enteredaddress.getText();
         
-        String thefilepath = "C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Downloads\\Inventory Management System and POS\\src\\IMS\\"+address+".txt";
+        String thefilepath = "NetbeansProject\\Inventory Management and POS\\ F4 Data\\Customer Data\\"+address+".txt";
         File getfile = new File(thefilepath);
         
         try {
@@ -209,7 +223,7 @@ public class CustomerOrderList extends javax.swing.JFrame {
         // prints out the invoice
         String address = enteredaddress.getText();
         
-        String thefilepath = "C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Downloads\\Inventory Management System and POS\\src\\IMS\\"+address+"-receipt.txt";
+        String thefilepath = "NetbeansProject\\Inventory Management and POS\\ F4 Data\\Customer Data\\"+address+"-receipt.txt";
         File getfile = new File(thefilepath);
         
         try {
@@ -227,6 +241,21 @@ public class CustomerOrderList extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this, "Receipt Printed!");
     }//GEN-LAST:event_maketherecieptActionPerformed
+
+    private void deleteorderfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteorderfileActionPerformed
+        // Delete the text file
+        String address = enteredaddress.getText();
+        
+        String thefilepath = "NetbeansProject\\Inventory Management and POS\\ F4 Data\\Customer Data\\"+address+"-receipt.txt";
+        File getfile = new File(thefilepath);
+        
+        if(getfile.delete()){
+            JOptionPane.showMessageDialog(this, "Your Order has been Cancelled!");
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Order does not Exist!");
+        }
+    }//GEN-LAST:event_deleteorderfileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -267,6 +296,7 @@ public class CustomerOrderList extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backtoprofile;
     private javax.swing.JButton createthereciept;
+    private javax.swing.JButton deleteorderfile;
     private javax.swing.JTextField enteredaddress;
     private javax.swing.JTextArea invoice;
     private javax.swing.JLabel jLabel1;

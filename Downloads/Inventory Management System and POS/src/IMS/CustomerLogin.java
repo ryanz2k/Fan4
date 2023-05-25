@@ -150,7 +150,7 @@ public class CustomerLogin extends javax.swing.JFrame {
         // Sends user to his/her profile
         String usernamelog = usernamelogin.getText();
         String passwordlog = new String(passwordlogin.getPassword());
-        String filepath = "C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Downloads\\Inventory Management System and POS\\src\\IMS\\";
+        String filepath = "NetbeansProject\\Inventory Management and POS\\ F4 Data\\Customer Data";
         File path = new File(filepath);
         
         if(!path.exists() || !path.isDirectory()){
