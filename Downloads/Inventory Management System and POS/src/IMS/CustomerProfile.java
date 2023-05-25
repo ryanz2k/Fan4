@@ -286,6 +286,7 @@ public class CustomerProfile extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(CustomerProfile.class.getName()).log(Level.SEVERE, null, ex);
             }
+            JOptionPane.showMessageDialog(this, "Successfully Edited your Profile!");
         }
     }//GEN-LAST:event_editprofileActionPerformed
 
