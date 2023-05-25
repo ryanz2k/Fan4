@@ -7,6 +7,7 @@ package IMS;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -39,6 +40,10 @@ public class CustomerOrderList extends javax.swing.JFrame {
         enteredaddress = new javax.swing.JTextField();
         seethefile = new javax.swing.JButton();
         backtoprofile = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        invoice = new javax.swing.JTextArea();
+        createthereciept = new javax.swing.JButton();
+        makethereciept = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -76,6 +81,25 @@ public class CustomerOrderList extends javax.swing.JFrame {
             }
         });
 
+        invoice.setEditable(false);
+        invoice.setColumns(20);
+        invoice.setRows(5);
+        jScrollPane2.setViewportView(invoice);
+
+        createthereciept.setText("Create Reciept");
+        createthereciept.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createtherecieptActionPerformed(evt);
+            }
+        });
+
+        makethereciept.setText("Make Reciept");
+        makethereciept.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                maketherecieptActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -83,15 +107,24 @@ public class CustomerOrderList extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(enteredaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(seethefile)
-                    .addComponent(backtoprofile))
-                .addContainerGap(355, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(createthereciept)
+                            .addComponent(makethereciept))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(enteredaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(seethefile)
+                            .addComponent(backtoprofile))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,8 +138,15 @@ public class CustomerOrderList extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(seethefile)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 317, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(createthereciept)
+                        .addGap(18, 18, 18)
+                        .addComponent(makethereciept))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addComponent(backtoprofile)
                 .addContainerGap())
         );
@@ -143,6 +183,50 @@ public class CustomerOrderList extends javax.swing.JFrame {
         CustomerProfile orderlisttoprofile = new CustomerProfile();
         orderlisttoprofile.setVisible(true);
     }//GEN-LAST:event_backtoprofileActionPerformed
+
+    private void createtherecieptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createtherecieptActionPerformed
+        // Creates the invoice
+        String address = enteredaddress.getText();
+        
+        String thefilepath = "C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Downloads\\Inventory Management System and POS\\src\\IMS\\"+address+".txt";
+        File getfile = new File(thefilepath);
+        
+        try {
+            FileReader readthecartlist = new FileReader(getfile);
+            BufferedReader reading = new BufferedReader(readthecartlist);
+            try {
+                invoice.read(reading, null);
+            } catch (IOException ex) {
+                Logger.getLogger(CustomerOrderList.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(CustomerOrderList.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_createtherecieptActionPerformed
+
+    private void maketherecieptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maketherecieptActionPerformed
+        // prints out the invoice
+        String address = enteredaddress.getText();
+        
+        String thefilepath = "C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Downloads\\Inventory Management System and POS\\src\\IMS\\"+address+"-receipt.txt";
+        File getfile = new File(thefilepath);
+        
+        try {
+            FileWriter createinvoice = new FileWriter(getfile);
+            BufferedWriter writeinvoice = new BufferedWriter(createinvoice);
+            writeinvoice.write("------------------\n");
+            writeinvoice.write("Deliver to: "+address);
+            writeinvoice.write("\nProduct Name | Quantity | Price | Total Price |\n");
+            invoice.write(writeinvoice);
+            writeinvoice.write("\n------------------");
+            writeinvoice.close();
+        } catch (IOException ex) {
+            Logger.getLogger(CustomerOrderList.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        JOptionPane.showMessageDialog(this, "Receipt Printed!");
+    }//GEN-LAST:event_maketherecieptActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,11 +266,15 @@ public class CustomerOrderList extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backtoprofile;
+    private javax.swing.JButton createthereciept;
     private javax.swing.JTextField enteredaddress;
+    private javax.swing.JTextArea invoice;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton makethereciept;
     private javax.swing.JTable orderlist;
     private javax.swing.JButton seethefile;
     // End of variables declaration//GEN-END:variables
