@@ -16,6 +16,8 @@ public class CustomerProfile extends javax.swing.JFrame {
     }
     
     private String username;
+    private String abalance;
+    private String statmember;
     
     public String getusername(){
         return this.username;
@@ -23,6 +25,22 @@ public class CustomerProfile extends javax.swing.JFrame {
     public void setusername(String username){
         this.username = username;
         profileusername.setText(username);
+    }
+    
+    public String getabalance(){
+        return this.abalance;
+    }
+    public void setabalance(String abalance){
+        this.abalance = abalance;
+        profilemoney.setText(abalance);
+    }
+    
+    public String getstatmember(){
+        return this.statmember;
+    }
+    public void setstatmember(String statmember){
+        this.statmember = statmember;
+        membership.setText(statmember);
     }
 
     @SuppressWarnings("unchecked")
@@ -48,6 +66,8 @@ public class CustomerProfile extends javax.swing.JFrame {
         editedusername = new javax.swing.JTextField();
         editedCardCN = new javax.swing.JTextField();
         editedCardCP = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        membership = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName(""); // NOI18N
@@ -137,6 +157,12 @@ public class CustomerProfile extends javax.swing.JFrame {
         editedCardCP.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         editedCardCP.setName(""); // NOI18N
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel9.setText("Membership:");
+
+        membership.setEditable(false);
+        membership.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -144,6 +170,8 @@ public class CustomerProfile extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(membership, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(profileusername, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(usernamepresent, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -179,8 +207,8 @@ public class CustomerProfile extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(profilemoney, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(profileusername, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addComponent(jLabel9))
+                .addContainerGap(252, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +242,7 @@ public class CustomerProfile extends javax.swing.JFrame {
                             .addComponent(jLabel7)
                             .addComponent(editedCardCP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(usernamepresent, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(profileusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
@@ -222,9 +250,13 @@ public class CustomerProfile extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(profilemoney, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(membership, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
                 .addComponent(logout)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -282,7 +314,11 @@ public class CustomerProfile extends javax.swing.JFrame {
                 }
                 
                 replacetext.close();
+                getfullname.setText("");
                 profileusername.setText(ediusername);
+                editedpassword.setText("");
+                editedCardCN.setText("");
+                editedCardCP.setText("");
             } catch (IOException ex) {
                 Logger.getLogger(CustomerProfile.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -340,7 +376,9 @@ public class CustomerProfile extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JButton logout;
+    private javax.swing.JTextField membership;
     private javax.swing.JButton orderproduct;
     private javax.swing.JTextField profilemoney;
     private javax.swing.JTextField profileusername;
