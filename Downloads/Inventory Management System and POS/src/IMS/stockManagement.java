@@ -481,8 +481,6 @@ public class stockManagement extends javax.swing.JFrame {
                     "Yes" // Default option
                 );
                 if (prompt == JOptionPane.YES_OPTION) {
-                    
-
                     //stock level
                     String stockLevel = null;
 
@@ -500,11 +498,29 @@ public class stockManagement extends javax.swing.JFrame {
                     //Add Report Log
                     if (totalInt < 0){
                         totalInt *= -1;
-                        model2.insertRow(model2.getRowCount(),new Object[] {"Time","Removed "+ totalInt +" "
+                        LocalDateTime date = LocalDateTime.now();
+                        int year = date.getYear();
+                        int month = date.getMonthValue();
+                        int day = date.getDayOfMonth();
+                        int hour = date.getHour();
+                        int minute = date.getMinute();
+                        int second = date.getSecond();
+
+                        String currentDate = hour+":"+minute+":"+second+"  "+month+"-"+day+"-"+year;
+                        model2.insertRow(model2.getRowCount(),new Object[] {currentDate,"Removed "+ totalInt +" "
                                 + productList.getSelectedItem(),"Updated Item"});
                         totalInt *= -1;
                     }else if (totalInt > 0){
-                        model2.insertRow(model2.getRowCount(),new Object[] {"Time","Added "+ totalInt +" "
+                        LocalDateTime date = LocalDateTime.now();
+                        int year = date.getYear();
+                        int month = date.getMonthValue();
+                        int day = date.getDayOfMonth();
+                        int hour = date.getHour();
+                        int minute = date.getMinute();
+                        int second = date.getSecond();
+
+                        String currentDate = hour+":"+minute+":"+second+"  "+month+"-"+day+"-"+year;
+                        model2.insertRow(model2.getRowCount(),new Object[] {currentDate,"Added "+ totalInt +" "
                                 + productList.getSelectedItem(),"Updated Item"});
                     }
   
