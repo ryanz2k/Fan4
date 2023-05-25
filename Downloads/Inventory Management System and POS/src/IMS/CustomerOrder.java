@@ -641,7 +641,7 @@ public class CustomerOrder extends javax.swing.JFrame {
             try {
                 FileWriter file = new FileWriter(makefile);
                 BufferedWriter writethefile = new BufferedWriter(file);
-            
+                
                 for(int r = 0; r < customercart.getRowCount(); r++){
                     for(int c = 0; c < customercart.getColumnCount(); c++){
                         writethefile.write(customercart.getValueAt(r, c).toString()+" ");
