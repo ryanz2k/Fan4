@@ -633,6 +633,7 @@ public class CustomerOrder extends javax.swing.JFrame {
     private void comfirmcartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comfirmcartActionPerformed
         // Stores the User's Cart List
         String customeraddress = addresstodeliver.getText();
+        String totaladdedcost = overallcost.getText();
         
         if(customercart.getRowCount() != 0){
             String thefilepath = "C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Downloads\\Inventory Management System and POS\\src\\IMS\\"+customeraddress+".txt";
@@ -647,6 +648,7 @@ public class CustomerOrder extends javax.swing.JFrame {
                         }
                         writethefile.newLine();
                     }
+                    writethefile.write("Over All Cost: "+totaladdedcost);
                     writethefile.close();
                     file.close();
             
