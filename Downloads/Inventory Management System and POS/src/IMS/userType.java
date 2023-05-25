@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package IMS;
 
 
@@ -29,11 +26,9 @@ public class userType extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         adminButton = new javax.swing.JButton();
         employeeButton = new javax.swing.JButton();
-        customerButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -52,27 +47,17 @@ public class userType extends javax.swing.JFrame {
             }
         });
         jPanel4.add(adminButton);
-        adminButton.setBounds(560, 20, 130, 130);
+        adminButton.setBounds(530, 50, 130, 130);
 
         employeeButton.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        employeeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/employee.png"))); // NOI18N
+        employeeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/customer.png"))); // NOI18N
         employeeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 employeeButtonActionPerformed(evt);
             }
         });
         jPanel4.add(employeeButton);
-        employeeButton.setBounds(550, 170, 150, 130);
-
-        customerButton.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        customerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMS/customer.png"))); // NOI18N
-        customerButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                customerButtonActionPerformed(evt);
-            }
-        });
-        jPanel4.add(customerButton);
-        customerButton.setBounds(550, 320, 150, 130);
+        employeeButton.setBounds(520, 250, 150, 130);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 500));
@@ -101,21 +86,15 @@ public class userType extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("Admin\n");
+        jLabel1.setText("Inventory Management System");
         jPanel4.add(jLabel1);
-        jLabel1.setBounds(440, 70, 60, 24);
-
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel2.setText("Employee");
-        jPanel4.add(jLabel2);
-        jLabel2.setBounds(430, 220, 79, 24);
+        jLabel1.setBounds(470, 190, 260, 23);
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("Customer");
+        jLabel3.setText("POS System");
         jPanel4.add(jLabel3);
-        jLabel3.setBounds(440, 370, 90, 24);
+        jLabel3.setBounds(550, 390, 110, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,17 +131,6 @@ public class userType extends javax.swing.JFrame {
        this.dispose();
        
     }//GEN-LAST:event_employeeButtonActionPerformed
-
-    private void customerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerButtonActionPerformed
-        // On click goes to Customer Login
-        
-        CustomerLogin customerlog = new CustomerLogin();
-        customerlog.setVisible(true);
-        customerlog.pack();
-        customerlog.setLocationRelativeTo(null);
-        this.dispose();
-        
-    }//GEN-LAST:event_customerButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,10 +171,8 @@ public class userType extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adminButton;
-    private javax.swing.JButton customerButton;
     private javax.swing.JButton employeeButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;

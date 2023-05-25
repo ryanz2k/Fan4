@@ -14,8 +14,6 @@ import java.time.LocalDateTime;
 public class stockManagement extends javax.swing.JFrame {
     private String UID;
     private boolean canImport = true;
-    public int logRow = 0;
-    adminLog adminLog = new adminLog();
     DefaultTableModel model;
     DefaultTableModel model2;
     /**
