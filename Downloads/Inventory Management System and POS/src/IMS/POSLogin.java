@@ -81,7 +81,7 @@ public class POSLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("LOGIN");
         Right.add(jLabel1);
-        jLabel1.setBounds(128, 33, 118, 43);
+        jLabel1.setBounds(128, 33, 110, 48);
 
         jLabel2.setBackground(new java.awt.Color(51, 51, 51));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -106,7 +106,7 @@ public class POSLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Password");
         Right.add(jLabel3);
-        jLabel3.setBounds(18, 192, 129, 17);
+        jLabel3.setBounds(18, 192, 129, 20);
 
         passwordLogin.setForeground(new java.awt.Color(102, 102, 102));
         passwordLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +132,7 @@ public class POSLogin extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("I don't have an account?");
         Right.add(jLabel4);
-        jLabel4.setBounds(10, 400, 144, 30);
+        jLabel4.setBounds(10, 400, 129, 30);
 
         jButton2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jButton2.setText("Sign Up");
@@ -257,7 +257,7 @@ public class POSLogin extends javax.swing.JFrame {
                         // Create the log file with the employee's full name as the file name and write the login time inside
                         String logFileName = DIRECTORY_PATH_EmployeeLogs + "/" + storedFullName + ".txt";
                         try (BufferedWriter writer = new BufferedWriter(new FileWriter(logFileName))) {
-                            writer.write("Login Time: " + loginTime);
+                            writer.write("Login Time: " + loginTime+ "_"+storedFullName+" Logged in");
                             writer.newLine();
                             writer.write("Logout Time: " + logoutTime);
                           
@@ -265,7 +265,7 @@ public class POSLogin extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, "An error occurred while saving the login time: " + e.getMessage());
                             return;
                         }
-
+                        //SEND TO REPORT LOG
                         JOptionPane.showMessageDialog(null, "Successfully Login");
 
                         // Open the POSOrderList frame

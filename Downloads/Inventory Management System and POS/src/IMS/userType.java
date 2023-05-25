@@ -103,19 +103,19 @@ public class userType extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Admin\n");
         jPanel4.add(jLabel1);
-        jLabel1.setBounds(440, 70, 60, 23);
+        jLabel1.setBounds(440, 70, 60, 24);
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Employee");
         jPanel4.add(jLabel2);
-        jLabel2.setBounds(430, 220, 80, 23);
+        jLabel2.setBounds(430, 220, 79, 24);
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Customer");
         jPanel4.add(jLabel3);
-        jLabel3.setBounds(440, 370, 90, 23);
+        jLabel3.setBounds(440, 370, 90, 24);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,6 +131,7 @@ public class userType extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed

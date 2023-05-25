@@ -234,13 +234,13 @@ public class POSOrderList extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Time:");
         jPanel5.add(jLabel5);
-        jLabel5.setBounds(280, 0, 38, 40);
+        jLabel5.setBounds(280, 0, 37, 40);
 
         jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText(" Date: ");
         jPanel5.add(jLabel6);
-        jLabel6.setBounds(420, 0, 43, 40);
+        jLabel6.setBounds(420, 0, 44, 40);
 
         timeLabel.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         timeLabel.setForeground(new java.awt.Color(51, 51, 51));
@@ -290,7 +290,7 @@ public class POSOrderList extends javax.swing.JFrame {
         );
 
         jPanel3.add(jPanel4);
-        jPanel4.setBounds(390, 10, 170, 100);
+        jPanel4.setBounds(390, 10, 170, 101);
 
         jPanel8.setBackground(new java.awt.Color(102, 102, 102));
         jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -411,13 +411,8 @@ public class POSOrderList extends javax.swing.JFrame {
         POSLoginFrame.pack();
         POSLoginFrame.setLocationRelativeTo(null);
         this.dispose();
-        
-         
     }//GEN-LAST:event_logoutButtonActionPerformed
 
-
-
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel fullNameLabel;
