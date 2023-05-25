@@ -34,6 +34,8 @@ public class POSSignUp extends javax.swing.JFrame {
         Username = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         CreditCardNUM = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        MoneyDeposit = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Employee Sign Up ");
@@ -68,11 +70,11 @@ public class POSSignUp extends javax.swing.JFrame {
         Right.setPreferredSize(new java.awt.Dimension(400, 500));
         Right.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("SIGN UP");
         Right.add(jLabel1);
-        jLabel1.setBounds(108, 31, 156, 43);
+        jLabel1.setBounds(120, 20, 170, 43);
 
         jLabel2.setBackground(new java.awt.Color(51, 51, 51));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -80,7 +82,7 @@ public class POSSignUp extends javax.swing.JFrame {
         jLabel2.setText("Full Name");
         jLabel2.setPreferredSize(new java.awt.Dimension(60, 20));
         Right.add(jLabel2);
-        jLabel2.setBounds(20, 90, 141, 20);
+        jLabel2.setBounds(20, 80, 141, 20);
 
         Fullname.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Fullname.setForeground(new java.awt.Color(102, 102, 102));
@@ -90,14 +92,14 @@ public class POSSignUp extends javax.swing.JFrame {
             }
         });
         Right.add(Fullname);
-        Fullname.setBounds(20, 110, 324, 40);
+        Fullname.setBounds(20, 100, 324, 30);
 
         jLabel3.setBackground(new java.awt.Color(51, 51, 51));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("Credit Card Number ");
+        jLabel3.setText("Deposit Cash Amount");
         Right.add(jLabel3);
-        jLabel3.setBounds(20, 300, 160, 17);
+        jLabel3.setBounds(20, 310, 160, 60);
 
         Password.setForeground(new java.awt.Color(102, 102, 102));
         Password.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +108,7 @@ public class POSSignUp extends javax.swing.JFrame {
             }
         });
         Right.add(Password);
-        Password.setBounds(20, 180, 324, 40);
+        Password.setBounds(20, 220, 324, 30);
 
         employeeSignUpButton.setBackground(new java.awt.Color(102, 102, 102));
         employeeSignUpButton.setForeground(new java.awt.Color(255, 255, 255));
@@ -117,7 +119,7 @@ public class POSSignUp extends javax.swing.JFrame {
             }
         });
         Right.add(employeeSignUpButton);
-        employeeSignUpButton.setBounds(20, 400, 93, 30);
+        employeeSignUpButton.setBounds(30, 410, 93, 30);
 
         jButton2.setBackground(new java.awt.Color(102, 102, 102));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -128,7 +130,7 @@ public class POSSignUp extends javax.swing.JFrame {
             }
         });
         Right.add(jButton2);
-        jButton2.setBounds(130, 400, 90, 30);
+        jButton2.setBounds(250, 410, 90, 30);
 
         jLabel7.setBackground(new java.awt.Color(51, 51, 51));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -136,21 +138,41 @@ public class POSSignUp extends javax.swing.JFrame {
         jLabel7.setText("Username");
         jLabel7.setPreferredSize(new java.awt.Dimension(60, 20));
         Right.add(jLabel7);
-        jLabel7.setBounds(20, 160, 141, 20);
+        jLabel7.setBounds(20, 140, 141, 20);
 
         Username.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Username.setForeground(new java.awt.Color(102, 102, 102));
+        Username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsernameActionPerformed(evt);
+            }
+        });
         Right.add(Username);
-        Username.setBounds(20, 250, 324, 40);
+        Username.setBounds(20, 160, 324, 30);
 
         jLabel8.setBackground(new java.awt.Color(51, 51, 51));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Password");
         Right.add(jLabel8);
-        jLabel8.setBounds(20, 230, 129, 17);
+        jLabel8.setBounds(20, 190, 129, 40);
         Right.add(CreditCardNUM);
-        CreditCardNUM.setBounds(20, 320, 320, 40);
+        CreditCardNUM.setBounds(20, 280, 320, 30);
+
+        jLabel4.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("Credit Card Number ");
+        Right.add(jLabel4);
+        jLabel4.setBounds(20, 250, 160, 40);
+
+        MoneyDeposit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MoneyDepositActionPerformed(evt);
+            }
+        });
+        Right.add(MoneyDeposit);
+        MoneyDeposit.setBounds(20, 350, 320, 30);
 
         jPanel1.add(Right);
         Right.setBounds(420, 0, 400, 500);
@@ -186,9 +208,10 @@ public class POSSignUp extends javax.swing.JFrame {
         String username = Username.getText();
         String password = new String(Password.getPassword());
         String creditCardNum = CreditCardNUM.getText();
+        String moneyDeposit = MoneyDeposit.getText();
         String DIRECTORY_PATH = "NetbeansProject/Inventory Management and POS/ F4 Data"; 
         
-         if (fullname.isEmpty() || username.isEmpty() || password.isEmpty() || creditCardNum.isEmpty()) {
+         if (fullname.isEmpty() || username.isEmpty() || password.isEmpty() || creditCardNum.isEmpty() || moneyDeposit.isEmpty()) {
             JOptionPane.showMessageDialog(null,"Error: Please fill in all fields");
             return; 
         }
@@ -229,6 +252,10 @@ public class POSSignUp extends javax.swing.JFrame {
                 bufferedWriter.write("Username: " + username);
                 bufferedWriter.newLine();
                 bufferedWriter.write("Password: " + password);
+                bufferedWriter.newLine();
+                bufferedWriter.write("Credit Card Number: " + creditCardNum);
+                bufferedWriter.newLine();
+                bufferedWriter.write("Deposit Cash Amount: " + moneyDeposit);
             }
                 JOptionPane.showMessageDialog(null,"Account Successfully Registered!");
 
@@ -265,11 +292,20 @@ public class POSSignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FullnameActionPerformed
 
+    private void UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsernameActionPerformed
+
+    private void MoneyDepositActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoneyDepositActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MoneyDepositActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField CreditCardNUM;
     private javax.swing.JTextField Fullname;
     private javax.swing.JPanel Left;
+    private javax.swing.JTextField MoneyDeposit;
     private javax.swing.JPasswordField Password;
     private javax.swing.JPanel Right;
     private javax.swing.JTextField Username;
@@ -278,6 +314,7 @@ public class POSSignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
