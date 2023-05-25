@@ -20,7 +20,6 @@ public class CustomerProfile extends javax.swing.JFrame {
     }
     
     private String username;
-    private String balance;
     
     public String getusername(){
         return this.username;
@@ -28,14 +27,6 @@ public class CustomerProfile extends javax.swing.JFrame {
     public void setusername(String username){
         this.username = username;
         profileusername.setText(username);
-    }
-    
-    public String getbalance(){
-        return this.balance;
-    }
-    public void setbalance(String balance){
-        this.balance = balance;
-        profilemoney.setText(balance);
     }
 
     /**

@@ -465,13 +465,6 @@ public class CustomerOrder extends javax.swing.JFrame {
 
     private void addtocartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addtocartActionPerformed
         // adds the product to the cart
-        
-            int eachtotalprice = Integer.parseInt(producttotalprice.getText());
-            overallprice += eachtotalprice;
-        
-            String getoverallprice = Integer.toString(overallprice);
-            overallcost.setText(getoverallprice);
-        
         if(productname.getText().equals("") || productquantity.getText().equals("") || productprice.getText().equals("")){
             JOptionPane.showMessageDialog(this, "Please Pick a Product!");
         }
@@ -479,6 +472,12 @@ public class CustomerOrder extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Calculate the Total Price!");
         }
         else{
+            int eachtotalprice = Integer.parseInt(producttotalprice.getText());
+            overallprice += eachtotalprice;
+        
+            String getoverallprice = Integer.toString(overallprice);
+            overallcost.setText(getoverallprice);
+            
             String productpicked[] = {productname.getText(),productquantity.getText(),productprice.getText(),producttotalprice.getText()};
             
             DefaultTableModel cartlist = (DefaultTableModel)customercart.getModel();
@@ -517,98 +516,98 @@ public class CustomerOrder extends javax.swing.JFrame {
 
     private void chardonnaywineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chardonnaywineActionPerformed
         // TODO add your handling code here:
-        productname.setText("Chardonnay Wine");
+        productname.setText("Chardonnay-Wine");
         productquantity.setText("1");
         productprice.setText("24");
     }//GEN-LAST:event_chardonnaywineActionPerformed
 
     private void cabernetsauvignonwineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cabernetsauvignonwineActionPerformed
         // TODO add your handling code here:
-        productname.setText("Cabernet Sauvignon Wine");
+        productname.setText("Cabernet-Sauvignon-Wine");
         productquantity.setText("1");
         productprice.setText("26");
     }//GEN-LAST:event_cabernetsauvignonwineActionPerformed
 
     private void stoutbeerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stoutbeerActionPerformed
         // TODO add your handling code here:
-        productname.setText("Stout Beer");
+        productname.setText("Stout-Beer");
         productquantity.setText("1");
         productprice.setText("18");
     }//GEN-LAST:event_stoutbeerActionPerformed
 
     private void scotchwhiskyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scotchwhiskyActionPerformed
         // TODO add your handling code here:
-        productname.setText("Scotch Whisky");
+        productname.setText("Scotch-Whisky");
         productquantity.setText("1");
         productprice.setText("39");
     }//GEN-LAST:event_scotchwhiskyActionPerformed
 
     private void bourbonwhiskyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bourbonwhiskyActionPerformed
         // TODO add your handling code here:
-        productname.setText("Bourbon Whisky");
+        productname.setText("Bourbon-Whisky");
         productquantity.setText("1");
         productprice.setText("28");
     }//GEN-LAST:event_bourbonwhiskyActionPerformed
 
     private void plymouthginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plymouthginActionPerformed
         // TODO add your handling code here:
-        productname.setText("Plymouth Gin");
+        productname.setText("Plymouth-Gin");
         productquantity.setText("1");
         productprice.setText("28");
     }//GEN-LAST:event_plymouthginActionPerformed
 
     private void oldtomginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oldtomginActionPerformed
         // TODO add your handling code here:
-        productname.setText("Old Tom Gin");
+        productname.setText("Old-Tom-Gin");
         productquantity.setText("1");
         productprice.setText("32");
     }//GEN-LAST:event_oldtomginActionPerformed
 
     private void sweetciderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sweetciderActionPerformed
         // TODO add your handling code here:
-        productname.setText("Sweet Cider");
+        productname.setText("Sweet-Cider");
         productquantity.setText("1");
         productprice.setText("18");
     }//GEN-LAST:event_sweetciderActionPerformed
 
     private void bitterciderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bitterciderActionPerformed
         // TODO add your handling code here:
-        productname.setText("Bitter Cider");
+        productname.setText("Bitter-Cider");
         productquantity.setText("1");
         productprice.setText("18");
     }//GEN-LAST:event_bitterciderActionPerformed
 
     private void fruitvodkaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fruitvodkaActionPerformed
         // TODO add your handling code here:
-        productname.setText("Fruit Vodka");
+        productname.setText("Fruit-Vodka");
         productquantity.setText("1");
         productprice.setText("24");
     }//GEN-LAST:event_fruitvodkaActionPerformed
 
     private void plainvodkaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plainvodkaActionPerformed
         // TODO add your handling code here:
-        productname.setText("Plain Vodka");
+        productname.setText("Plain-Vodka");
         productquantity.setText("1");
         productprice.setText("23");
     }//GEN-LAST:event_plainvodkaActionPerformed
 
     private void distilledsojuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_distilledsojuActionPerformed
         // TODO add your handling code here:
-        productname.setText("Distilled Soju");
+        productname.setText("Distilled-Soju");
         productquantity.setText("1");
         productprice.setText("24");
     }//GEN-LAST:event_distilledsojuActionPerformed
 
     private void navyrumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_navyrumActionPerformed
         // TODO add your handling code here:
-        productname.setText("Navy Rum");
+        productname.setText("Navy-Rum");
         productquantity.setText("1");
         productprice.setText("24");
     }//GEN-LAST:event_navyrumActionPerformed
 
     private void rhumagricoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rhumagricoleActionPerformed
         // TODO add your handling code here:
-        productname.setText("Rhum Agricole");
+        productname.setText("Rhum-Agricole");
         productquantity.setText("1");
         productprice.setText("42");
     }//GEN-LAST:event_rhumagricoleActionPerformed
@@ -633,6 +632,7 @@ public class CustomerOrder extends javax.swing.JFrame {
     private void comfirmcartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comfirmcartActionPerformed
         // Stores the User's Cart List
         String customeraddress = addresstodeliver.getText();
+        String totaladdedcost = overallcost.getText();
         
         if(customercart.getRowCount() != 0){
             String thefilepath = "C:\\Users\\Raidi\\Documents\\ComProgProject\\trunk\\Downloads\\Inventory Management System and POS\\src\\IMS\\"+customeraddress+".txt";
@@ -640,19 +640,22 @@ public class CustomerOrder extends javax.swing.JFrame {
             try {
                 FileWriter file = new FileWriter(makefile);
                 BufferedWriter writethefile = new BufferedWriter(file);
-            
+                
                 for(int r = 0; r < customercart.getRowCount(); r++){
                     for(int c = 0; c < customercart.getColumnCount(); c++){
                         writethefile.write(customercart.getValueAt(r, c).toString()+" ");
                         }
                         writethefile.newLine();
                     }
+                    writethefile.write("Over All Cost($): "+totaladdedcost);
                     writethefile.close();
                     file.close();
             
                 } catch (IOException ex) {
                     Logger.getLogger(CustomerOrder.class.getName()).log(Level.SEVERE, null, ex);
                 }
+            addresstodeliver.setText("");
+            overallcost.setText("");
             JOptionPane.showMessageDialog(this, "Your Cart has been Saved!");
         }
         else{
