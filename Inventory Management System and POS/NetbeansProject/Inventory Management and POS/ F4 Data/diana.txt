@@ -1,0 +1,5 @@
+Full Name: diana
+Username: diana
+Password: 123
+Credit Card Number: 1234123412341234
+Deposit Cash Amount: 1000

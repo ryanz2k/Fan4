@@ -1,0 +1,3 @@
+Stout Beer 5 18 90 
+Scotch Whisky 5 39 195 
+Bitter Cider 5 18 90 
